@@ -9,6 +9,9 @@ node_modules/
 # Build outputs
 dist/
 
+# Reports
+eslint-report.json
+
 # Misc
 .DS_Store
 .idea

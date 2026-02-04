@@ -14,11 +14,43 @@ concurrency:
 permissions:
   checks: write
   contents: read
+  issues: write
   pull-requests: write
 
 jobs:
-  lint-commit-messages:
-    name: Lint Commit Messages
+  lint-code:
+    name: Lint Source Code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🏗 Checkout repository
+        uses: actions/checkout@v6
+
+      - name: 🏗 Setup Turborepo
+        uses: ./.github/actions/setup-turborepo
+        with:
+          node-version-file: .node-version
+
+      - name: 🔍 Find problems in source code
+        id: lint-code
+        run: pnpm -s run lint:code --format=json --output-file=eslint-report.json
+
+      - name: 🚀 Update annotations and create lint report
+        if: ${{ !cancelled() && (steps.lint-code.outcome == 'success' || steps.lint-code.outcome == 'failure') }}
+        id: lint-report
+        uses: ataylorme/eslint-annotate-action@v3
+        with:
+          report-json: eslint-report.json
+
+      - name: 📝 Add pull request comment
+        if: ${{ !cancelled() && steps.lint-report.outcome == 'success' }}
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: lint-report
+          message: ${{ steps.lint-report.outputs.summary }}
+
+  lint-commits:
+    name: Lint Commit Message Format
     if: ${{ github.actor != 'dependabot[bot]' && github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
 
@@ -33,30 +65,14 @@ jobs:
         with:
           node-version-file: .node-version
 
-      - name: 🔍 Run commitlint to lint all commit messages
+      - name: 🔍 Lint all commit messages
         run: |
-          pnpm -s run commitlint \
+          pnpm -s run lint:commits \
             --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} \
             --to ${{ github.event.pull_request.head.sha }}
 
-  lint-consistency:
-    name: Lint Consistency of Versions and Ranges
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: 🏗 Checkout repository
-        uses: actions/checkout@v6
-
-      - name: 🏗 Setup Turborepo
-        uses: ./.github/actions/setup-turborepo
-        with:
-          node-version-file: .node-version
-
-      - name: 🔍 Run Syncpack to lint all versions and ranges
-        run: pnpm -s run syncpack:lint
-
-  lint-files-deps-exports:
-    name: Lint Files, Dependencies and Exports
+  lint-deps:
+    name: Lint Dependencies, Files and Exports
     runs-on: ubuntu-latest
 
     steps:
@@ -69,10 +85,10 @@ jobs:
           node-version-file: .node-version
 
       - name: 🔍 Find unused files, dependencies and exports
-        run: pnpm -s run knip --reporter github-actions
+        run: pnpm -s run lint:deps --reporter github-actions
 
   lint-markdown:
-    name: Lint Markdown
+    name: Lint Markdown Files
     runs-on: ubuntu-latest
 
     steps:
@@ -84,11 +100,11 @@ jobs:
         with:
           node-version-file: .node-version
 
-      - name: 🔍 Run markdownlint to lint all Markdown files
-        run: pnpm -s run markdownlint
+      - name: 🔍 Lint all Markdown files
+        run: pnpm -s run lint:markdown
 
-  lint-source-code:
-    name: Lint Source Code
+  lint-style:
+    name: Lint File Format
     runs-on: ubuntu-latest
 
     steps:
@@ -100,8 +116,24 @@ jobs:
         with:
           node-version-file: .node-version
 
-      - name: 🔍 Run ESLint to find problems in source code
-        run: pnpm -s run eslint
+      - name: 🔍 Check if the files are formatted
+        run: pnpm -s run lint:style
+
+  lint-versions:
+    name: Lint Consistency of Versions and Ranges
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🏗 Checkout repository
+        uses: actions/checkout@v6
+
+      - name: 🏗 Setup Turborepo
+        uses: ./.github/actions/setup-turborepo
+        with:
+          node-version-file: .node-version
+
+      - name: 🔍 Lint all versions and ranges
+        run: pnpm -s run lint:versions
 
   validate-and-build:
     name: Validate and Build
@@ -130,7 +162,7 @@ jobs:
           turbo-s3-secret-key: ${{ secrets.TURBO_S3_SECRET_KEY }}
 
       - name: 🔍 Validate packages affected by changes against requirements
-        run: pnpm -s run turbo:validate --affected
+        run: pnpm -s run validate --affected
 
       - name: 🔨 Run build of packages affected by changes
-        run: pnpm -s run turbo:build --affected
+        run: pnpm -s run build --affected
