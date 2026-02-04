@@ -12,6 +12,9 @@ dist/
 # Reports
 eslint-report.json
 
+# Directus
+directus/
+
 # Misc
 .DS_Store
 .idea

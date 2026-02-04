@@ -1,3 +1,7 @@
 {
-	"$schema": "https://unpkg.com/knip@5/schema.json"
+	"$schema": "https://unpkg.com/knip@5/schema.json",
+	"ignoreBinaries": [
+		"tools/scripts/directus-start.sh",
+		"tools/scripts/directus-stop.sh"
+	]
 }

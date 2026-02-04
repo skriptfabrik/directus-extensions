@@ -1,0 +1,20 @@
+services:
+  directus:
+    image: directus/directus:11.14.1
+    ports:
+      - '8055:8055'
+    volumes:
+      - ./directus/database:/directus/database
+      - ./directus/uploads:/directus/uploads
+      - ./packages:/directus/extensions
+    environment:
+      - SECRET="5cd9ac77-075b-4c6d-b168-ac02e6a856a3"
+      - DB_CLIENT="sqlite3"
+      - DB_FILENAME="/directus/database/data.db"
+      - ADMIN_EMAIL=admin@example.com
+      - ADMIN_PASSWORD=d1r3ctu5
+      - ADMIN_TOKEN=_SuUcR6UJyGE9lzSGhtwxOumGl6Jy5n1
+      - TELEMETRY=false
+      - CORS_ENABLED=true
+      - CORS_ORIGIN=true
+      - CACHE_AUTO_PURGE=true
