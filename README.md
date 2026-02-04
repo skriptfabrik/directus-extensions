@@ -14,7 +14,7 @@ extensions directory mounted in your project. Follow the guide for
 This is a mono repository with many different Directus extensions. Please take a closer look at the detailed
 instructions for each individual extension:
 
-- [Directus Global Variable Panel with Button](packages/directus-panel-variable-with-button/README.md)
+- [Directus Global Variable Panel with Button](packages/variable-with-button-panel/README.md)
 
 ## Resources
 
