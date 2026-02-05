@@ -33,6 +33,7 @@ const value = computed({
 
 const saveValue = () => {
 	insightsStore.setVariable(props.field, value.value);
+	insightsStore.refresh();
 };
 </script>
 
