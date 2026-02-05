@@ -180,8 +180,8 @@ jobs:
           turbo-s3-access-key: ${{ secrets.TURBO_S3_ACCESS_KEY }}
           turbo-s3-secret-key: ${{ secrets.TURBO_S3_SECRET_KEY }}
 
-      - name: 🔍 Validate packages affected by changes against requirements
-        run: pnpm -s run validate --affected
-
       - name: 🔨 Run build of packages affected by changes
         run: pnpm -s run build --affected
+
+      - name: 🔍 Validate packages affected by changes against requirements
+        run: pnpm -s run validate --affected
