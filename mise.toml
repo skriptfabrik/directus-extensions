@@ -22,8 +22,3 @@ sources = [
   "mise.toml"
 ]
 outputs = [ "node_modules/.pnpm/lock.yaml" ]
-
-[tasks.commitlint]
-description = "Lint commit messages"
-run = "pnpm -s run commitlint"
-depends = [ "install" ]
