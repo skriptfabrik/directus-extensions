@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  conventional-changelog-conventionalcommits:
+    hash: f95a24c25a92f9019f2c77c60525c6d1f932ee9ac4b0a85cf198ab5bb2176ba3
+    path: patches/conventional-changelog-conventionalcommits.patch
+
 importers:
 
   .:
@@ -5309,7 +5314,7 @@ snapshots:
   '@commitlint/config-conventional@20.4.1':
     dependencies:
       '@commitlint/types': 20.4.0
-      conventional-changelog-conventionalcommits: 9.1.0
+      conventional-changelog-conventionalcommits: 9.1.0(patch_hash=f95a24c25a92f9019f2c77c60525c6d1f932ee9ac4b0a85cf198ab5bb2176ba3)
 
   '@commitlint/config-validator@20.4.0':
     dependencies:
@@ -7382,7 +7387,7 @@ snapshots:
     dependencies:
       compare-func: 2.0.0
 
-  conventional-changelog-conventionalcommits@9.1.0:
+  conventional-changelog-conventionalcommits@9.1.0(patch_hash=f95a24c25a92f9019f2c77c60525c6d1f932ee9ac4b0a85cf198ab5bb2176ba3):
     dependencies:
       compare-func: 2.0.0
 

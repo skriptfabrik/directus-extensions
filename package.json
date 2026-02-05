@@ -40,5 +40,10 @@
 		"semantic-release": "^25.0.3",
 		"syncpack": "^13.0.4",
 		"turbo": "^2.8.2"
+	},
+	"pnpm": {
+		"patchedDependencies": {
+			"conventional-changelog-conventionalcommits": "patches/conventional-changelog-conventionalcommits.patch"
+		}
 	}
 }

@@ -1,7 +1,16 @@
 {
 	"$schema": "https://unpkg.com/knip@5/schema.json",
-	"ignoreBinaries": [
-		"tools/scripts/directus-start.sh",
-		"tools/scripts/directus-stop.sh"
-	]
+	"workspaces": {
+		".": {
+			"ignore": ["packages/*/release.config.mjs"],
+			"ignoreBinaries": [
+				"tools/scripts/directus-start.sh",
+				"tools/scripts/directus-stop.sh"
+			],
+			"ignoreDependencies": [
+				"@semantic-release/changelog",
+				"@semantic-release/exec"
+			]
+		}
+	}
 }
