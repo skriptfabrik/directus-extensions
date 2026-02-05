@@ -24,8 +24,8 @@
 		"build": "directus-extension build",
 		"dev": "directus-extension build -w --no-minify",
 		"link": "directus-extension link",
-		"validate": "directus-extension validate",
-		"release": "semantic-release"
+		"release": "semantic-release",
+		"validate": "directus-extension validate"
 	},
 	"devDependencies": {
 		"@directus/extensions-sdk": "17.0.5",
