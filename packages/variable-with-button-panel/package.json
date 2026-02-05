@@ -3,6 +3,7 @@
 	"type": "module",
 	"version": "1.0.0",
 	"description": "Extends the global variable panel with a button to save the variable.",
+	"license": "MIT",
 	"keywords": [
 		"directus",
 		"directus-extension",
