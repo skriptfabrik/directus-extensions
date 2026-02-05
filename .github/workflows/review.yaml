@@ -1,7 +1,7 @@
 name: Review Changes
 
 on:
-  pull_request_target:
+  pull_request:
     types:
       - opened
       - reopened
@@ -36,17 +36,23 @@ jobs:
 
       - name: 🔍 Find problems in source code
         id: lint-code
-        run: pnpm -s run lint:code --format=json --output-file=eslint-report.json
+        run: |
+          if [ "${{ github.event.pull_request.head.repo.full_name }}" == "${{ github.repository }}" ]; then
+            pnpm -s run lint:code --format=json --output-file=eslint-report.json
+          else
+            echo "The pull request comes from a forked repository, skipping annotations, lint report and pull request comment."
+            pnpm -s run lint:code
+          fi
 
       - name: 🚀 Update annotations and create lint report
-        if: ${{ !cancelled() && (steps.lint-code.outcome == 'success' || steps.lint-code.outcome == 'failure') }}
+        if: ${{ !cancelled() && (steps.lint-code.outcome == 'success' || steps.lint-code.outcome == 'failure') && github.event.pull_request.head.repo.full_name == github.repository }}
         id: lint-report
         uses: ataylorme/eslint-annotate-action@v3
         with:
           report-json: eslint-report.json
 
       - name: 📝 Add pull request comment
-        if: ${{ !cancelled() && steps.lint-report.outcome == 'success' }}
+        if: ${{ !cancelled() && steps.lint-report.outcome == 'success' && github.event.pull_request.head.repo.full_name == github.repository }}
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           header: lint-report
