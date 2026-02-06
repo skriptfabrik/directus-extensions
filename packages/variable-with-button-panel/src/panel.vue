@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Type } from '@directus/types';
 import { useStores } from '@directus/extensions-sdk';
-import { computed, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 
 interface Props {
 	type: Type;
@@ -31,8 +31,13 @@ const value = computed({
 	},
 });
 
+onMounted(() => {
+	value.value = insightsStore.getVariable(props.field);
+});
+
 const saveValue = () => {
 	insightsStore.setVariable(props.field, value.value);
+	insightsStore.saveChanges();
 	insightsStore.refresh();
 };
 </script>
