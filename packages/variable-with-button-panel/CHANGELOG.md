@@ -1,5 +1,11 @@
 # Changelog
 
+## [variable-with-button-panel-1.0.1](https://github.com/skriptfabrik/directus-extensions/compare/variable-with-button-panel-1.0.0...variable-with-button-panel-1.0.1) (2026-02-06)
+
+### 🐛 Bug Fixes
+
+- update dashboard on submit ([#6](https://github.com/skriptfabrik/directus-extensions/issues/6)) ([47f01bd](https://github.com/skriptfabrik/directus-extensions/commit/47f01bd5aa5bc01fca877bf6236a00d9175dcb8f))
+
 ## variable-with-button-panel-1.0.0 (2026-02-05)
 
 ### ✨ New Features

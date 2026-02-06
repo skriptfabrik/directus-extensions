@@ -1,7 +1,7 @@
 {
 	"name": "@skriptfabrik/variable-with-button-panel",
 	"type": "module",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Extends the global variable panel with a button to save the variable.",
 	"author": {
 		"name": "skriptfabrik",
