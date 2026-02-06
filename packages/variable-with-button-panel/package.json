@@ -7,6 +7,12 @@
 		"name": "skriptfabrik",
 		"email": "info@skriptfabrik.com"
 	},
+	"contributors": [
+		{
+			"name": "Paul Spenke",
+			"email": "paul@spenke-nordic.com"
+		}
+	],
 	"license": "MIT",
 	"homepage": "https://github.com/skriptfabrik/directus-extensions/blob/main/packages/variable-with-button-panel/README.md",
 	"repository": "skriptfabrik/directus-extensions.git",
