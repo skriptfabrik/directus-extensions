@@ -3,7 +3,14 @@
 	"type": "module",
 	"version": "1.0.0",
 	"description": "Extends the global variable panel with a button to save the variable.",
+	"author": {
+		"name": "skriptfabrik",
+		"email": "info@skriptfabrik.com"
+	},
 	"license": "MIT",
+	"homepage": "https://github.com/skriptfabrik/directus-extensions/blob/main/packages/variable-with-button-panel/README.md",
+	"repository": "skriptfabrik/directus-extensions.git",
+	"bugs": "https://github.com/skriptfabrik/directus-extensions/issues",
 	"keywords": [
 		"directus",
 		"directus-extension",
