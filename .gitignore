@@ -9,6 +9,7 @@ node_modules/
 
 # Directus
 directus/
+packages/.registry
 
 # Dotenv environment variables files
 .env

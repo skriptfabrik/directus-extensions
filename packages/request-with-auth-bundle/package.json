@@ -1,0 +1,83 @@
+{
+	"name": "@skriptfabrik/request-with-auth-bundle",
+	"type": "module",
+	"version": "1.0.0",
+	"description": "This bundle adds a new interface for selecting and managing app secrets and an operation for making authenticated requests.",
+	"author": {
+		"name": "skriptfabrik",
+		"email": "info@skriptfabrik.com"
+	},
+	"contributors": [
+		{
+			"name": "Paul Spenke",
+			"email": "paul@spenke-nordic.com"
+		}
+	],
+	"license": "MIT",
+	"homepage": "https://github.com/skriptfabrik/directus-extensions/blob/main/packages/request-with-auth-bundle/README.md",
+	"repository": "skriptfabrik/directus-extensions.git",
+	"bugs": "https://github.com/skriptfabrik/directus-extensions/issues",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-extension-bundle"
+	],
+	"icon": "shield_lock",
+	"files": [
+		"CHANGELOG.md",
+		"dist"
+	],
+	"directus:extension": {
+		"type": "bundle",
+		"path": {
+			"app": "dist/app.js",
+			"api": "dist/api.js"
+		},
+		"entries": [
+			{
+				"type": "hook",
+				"name": "app-secret-hook",
+				"source": "src/app-secret-hook/index.ts"
+			},
+			{
+				"type": "operation",
+				"name": "request-with-auth-operation",
+				"source": {
+					"app": "src/request-with-auth-operation/app.ts",
+					"api": "src/request-with-auth-operation/api.ts"
+				}
+			},
+			{
+				"type": "interface",
+				"name": "app-secret-selector-interface",
+				"source": "src/app-secret-selector-interface/index.ts"
+			},
+			{
+				"type": "interface",
+				"name": "app-secret-input-interface",
+				"source": "src/app-secret-input-interface/index.ts"
+			}
+		],
+		"host": "^11.0.0"
+	},
+	"scripts": {
+		"add": "directus-extension add",
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify",
+		"link": "directus-extension link",
+		"validate": "directus-extension validate"
+	},
+	"devDependencies": {
+		"@directus/extensions-sdk": "17.0.7",
+		"@directus/types": "^14.1.0",
+		"@directus/utils": "^13.2.0",
+		"@types/node": "^25.2.2",
+		"axios": "^1.13.5",
+		"encodeurl": "^2.0.0",
+		"typescript": "^5.9.3",
+		"vue": "^3.5.28"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

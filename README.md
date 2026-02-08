@@ -15,6 +15,7 @@ This is a mono repository with many different Directus extensions. Please take a
 instructions for each individual extension:
 
 - [Directus Global Variable Panel with Button](packages/variable-with-button-panel/README.md)
+- [Directus Request with Auth Bundle](packages/request-with-auth-bundle/README.md)
 
 ## Resources
 

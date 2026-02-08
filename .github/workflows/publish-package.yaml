@@ -9,6 +9,7 @@ on:
         required: true
         options:
           - variable-with-button-panel
+          - request-with-auth-bundle
 
 permissions:
   contents: write

@@ -11,6 +11,9 @@
 				"@semantic-release/changelog",
 				"@semantic-release/exec"
 			]
+		},
+		"packages/*": {
+			"entry": ["**/{api,app,index}.ts"]
 		}
 	}
 }
