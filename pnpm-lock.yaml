@@ -53,8 +53,8 @@ importers:
   packages/variable-with-button-panel:
     devDependencies:
       '@directus/extensions-sdk':
-        specifier: 17.0.6
-        version: 17.0.6(@types/node@25.2.1)(@unhead/vue@1.11.20(vue@3.5.27(typescript@5.9.3)))(jiti@2.6.1)(knex@3.1.0)(pinia@2.3.1(typescript@5.9.3)(vue@3.5.27(typescript@5.9.3)))(terser@5.46.0)(typescript@5.9.3)(yaml@2.8.2)
+        specifier: 17.0.7
+        version: 17.0.7(@types/node@25.2.1)(@unhead/vue@1.11.20(vue@3.5.27(typescript@5.9.3)))(jiti@2.6.1)(knex@3.1.0)(pinia@2.3.1(typescript@5.9.3)(vue@3.5.27(typescript@5.9.3)))(terser@5.46.0)(typescript@5.9.3)(yaml@2.8.2)
       '@directus/types':
         specifier: ^14.1.0
         version: 14.1.0(knex@3.1.0)(vue@3.5.27(typescript@5.9.3))
@@ -305,8 +305,8 @@ packages:
   '@directus/ai@1.1.0':
     resolution: {integrity: sha512-1nRyZAQXlwsgtko6TkVRHFN/p3Di/cPNFQ95GL37q/8u+G8vRFOix1tpVR53c2UkBDWcghoZX1Wwz8iKJsPdow==}
 
-  '@directus/composables@11.2.10':
-    resolution: {integrity: sha512-hpH+nvA+CSb8OMVmHJnHvZTU4bxAWIYv2s2rOZQYGXyq3F6lrNuJeOVKZ8adZ5mav8xam4Wk0UVwlqawDZzeHw==}
+  '@directus/composables@11.2.11':
+    resolution: {integrity: sha512-YJli7JZYluoQLwgQDphXJAc9cHUvJHMlL0oU0bYiCPklTybGMRNO15+fv/Wu1OihJomD0VRlaqGfdxBOH4Itqw==}
     peerDependencies:
       vue: 3.5.24
 
@@ -319,8 +319,8 @@ packages:
     peerDependencies:
       eslint: ^9.20
 
-  '@directus/extensions-sdk@17.0.6':
-    resolution: {integrity: sha512-Qz9rvekcQ0Zt4x+gLo84Z+ULNx06t9+tEPBAaIWs0A17O2XiAGwu0MsKVGUr7XdKlwM4FLNUgAMgjmIuK3UMNA==}
+  '@directus/extensions-sdk@17.0.7':
+    resolution: {integrity: sha512-FTNUE8sIw3ap+qutqo6brMRkA3L2kB3SFknA05MW9n8RJo5Jp8XHvKfERdvhQQMPFrNIU6zf4bgTzragbtKPDg==}
     engines: {node: '>=20.19.0'}
     hasBin: true
 
@@ -1998,8 +1998,8 @@ packages:
   caniuse-api@3.0.0:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
 
-  caniuse-lite@1.0.30001768:
-    resolution: {integrity: sha512-qY3aDRZC5nWPgHUgIB84WL+nySuo19wk0VJpp/XI9T34lrvkyhRvNVOFJOp2kxClQhiFBu+TaUSudf6oa3vkSA==}
+  caniuse-lite@1.0.30001769:
+    resolution: {integrity: sha512-BCfFL1sHijQlBGWBMuJyhZUhzo7wer5sVj9hqekB/7xn0Ypy+pER/edCYQm4exbXj4WiySGp40P8UuTh6w1srg==}
 
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -2835,8 +2835,8 @@ packages:
   get-tsconfig@4.13.1:
     resolution: {integrity: sha512-EoY1N2xCn44xU6750Sx7OjOIT59FkmstNc3X6y5xpz7D5cBtZRe/3pSlTkDJgqsOk3WwZPkWfonhhUJfttQo3w==}
 
-  get-tsconfig@4.13.3:
-    resolution: {integrity: sha512-vp8Cj/+9Q/ibZUrq1rhy8mCTQpCk31A3uu9wc1C50yAb3x2pFHOsGdAZQ7jD86ARayyxZUViYeIztW+GE8dcrg==}
+  get-tsconfig@4.13.6:
+    resolution: {integrity: sha512-shZT/QMiSHc/YBLxxOkMtgSid5HFoauqCE3/exfsEcwg1WkeqjG+V40yBbBrsD+jW2HDXcs28xOfcbm2jI8Ddw==}
 
   getopts@2.3.0:
     resolution: {integrity: sha512-5eDf9fuSXwxBL6q5HX+dhDj+dslFGWzU5thZ9kNKUkcPtaPdatmUFKwHFrLb/uf/WpA4BHET+AX3Scl56cAjpA==}
@@ -5424,7 +5424,7 @@ snapshots:
 
   '@directus/ai@1.1.0': {}
 
-  '@directus/composables@11.2.10(vue@3.5.24(typescript@5.9.3))':
+  '@directus/composables@11.2.11(vue@3.5.24(typescript@5.9.3))':
     dependencies:
       '@directus/constants': 14.0.0
       '@directus/utils': 13.2.0(vue@3.5.24(typescript@5.9.3))
@@ -5481,9 +5481,9 @@ snapshots:
       - typescript
       - vitest
 
-  '@directus/extensions-sdk@17.0.6(@types/node@25.2.1)(@unhead/vue@1.11.20(vue@3.5.27(typescript@5.9.3)))(jiti@2.6.1)(knex@3.1.0)(pinia@2.3.1(typescript@5.9.3)(vue@3.5.27(typescript@5.9.3)))(terser@5.46.0)(typescript@5.9.3)(yaml@2.8.2)':
+  '@directus/extensions-sdk@17.0.7(@types/node@25.2.1)(@unhead/vue@1.11.20(vue@3.5.27(typescript@5.9.3)))(jiti@2.6.1)(knex@3.1.0)(pinia@2.3.1(typescript@5.9.3)(vue@3.5.27(typescript@5.9.3)))(terser@5.46.0)(typescript@5.9.3)(yaml@2.8.2)':
     dependencies:
-      '@directus/composables': 11.2.10(vue@3.5.24(typescript@5.9.3))
+      '@directus/composables': 11.2.11(vue@3.5.24(typescript@5.9.3))
       '@directus/constants': 14.0.0
       '@directus/extensions': 3.0.17(knex@3.1.0)(vue@3.5.24(typescript@5.9.3))
       '@directus/themes': 1.2.2(@unhead/vue@1.11.20(vue@3.5.27(typescript@5.9.3)))(pinia@2.3.1(typescript@5.9.3)(vue@3.5.27(typescript@5.9.3)))(vue@3.5.24(typescript@5.9.3))
@@ -7248,7 +7248,7 @@ snapshots:
   browserslist@4.28.1:
     dependencies:
       baseline-browser-mapping: 2.9.19
-      caniuse-lite: 1.0.30001768
+      caniuse-lite: 1.0.30001769
       electron-to-chromium: 1.5.286
       node-releases: 2.0.27
       update-browserslist-db: 1.2.3(browserslist@4.28.1)
@@ -7267,11 +7267,11 @@ snapshots:
   caniuse-api@3.0.0:
     dependencies:
       browserslist: 4.28.1
-      caniuse-lite: 1.0.30001768
+      caniuse-lite: 1.0.30001769
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
 
-  caniuse-lite@1.0.30001768: {}
+  caniuse-lite@1.0.30001769: {}
 
   ccount@2.0.1: {}
 
@@ -8228,7 +8228,7 @@ snapshots:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
-  get-tsconfig@4.13.3:
+  get-tsconfig@4.13.6:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
@@ -9667,7 +9667,7 @@ snapshots:
       debug: 4.4.3
       es-module-lexer: 1.7.0
       esbuild: 0.26.0
-      get-tsconfig: 4.13.3
+      get-tsconfig: 4.13.6
       rollup: 4.52.5
       unplugin-utils: 0.2.5
     transitivePeerDependencies:
