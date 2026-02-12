@@ -8,8 +8,8 @@ on:
         description: Directus extension package to publish
         required: true
         options:
-          - variable-with-button-panel
           - request-with-auth-bundle
+          - variable-with-button-panel
 
 permissions:
   contents: write

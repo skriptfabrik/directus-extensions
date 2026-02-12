@@ -14,7 +14,7 @@
 		}
 	],
 	"license": "MIT",
-	"homepage": "https://github.com/skriptfabrik/directus-extensions/blob/main/packages/variable-with-button-panel/README.md",
+	"homepage": "https://github.com/skriptfabrik/directus-extensions/blob/main/packages/variable-with-button-panel",
 	"repository": "skriptfabrik/directus-extensions.git",
 	"bugs": "https://github.com/skriptfabrik/directus-extensions/issues",
 	"keywords": [

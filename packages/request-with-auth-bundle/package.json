@@ -14,7 +14,7 @@
 		}
 	],
 	"license": "MIT",
-	"homepage": "https://github.com/skriptfabrik/directus-extensions/blob/main/packages/request-with-auth-bundle/README.md",
+	"homepage": "https://github.com/skriptfabrik/directus-extensions/blob/main/packages/request-with-auth-bundle",
 	"repository": "skriptfabrik/directus-extensions.git",
 	"bugs": "https://github.com/skriptfabrik/directus-extensions/issues",
 	"keywords": [
@@ -65,13 +65,14 @@
 		"build": "directus-extension build",
 		"dev": "directus-extension build -w --no-minify",
 		"link": "directus-extension link",
+		"release": "semantic-release",
 		"validate": "directus-extension validate"
 	},
 	"devDependencies": {
 		"@directus/extensions-sdk": "17.0.7",
 		"@directus/types": "^14.1.0",
 		"@directus/utils": "^13.2.0",
-		"@types/node": "^25.2.2",
+		"@types/node": "^24.10.13",
 		"axios": "^1.13.5",
 		"encodeurl": "^2.0.0",
 		"typescript": "^5.9.3",
