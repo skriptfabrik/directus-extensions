@@ -70,7 +70,7 @@
 	},
 	"devDependencies": {
 		"@directus/extensions-sdk": "17.0.7",
-		"@directus/types": "^14.1.0",
+		"@directus/types": "^14.2.1",
 		"@directus/utils": "^13.2.0",
 		"@types/node": "^24.10.13",
 		"axios": "^1.13.5",
