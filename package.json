@@ -39,7 +39,7 @@
 		"markdownlint-cli2": "^0.21.0",
 		"prettier": "^3.8.1",
 		"semantic-release": "^25.0.3",
-		"syncpack": "^13.0.4",
+		"syncpack": "^14.0.0",
 		"turbo": "^2.8.9"
 	},
 	"pnpm": {
