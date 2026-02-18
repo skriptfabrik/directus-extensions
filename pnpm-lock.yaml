@@ -62,8 +62,8 @@ importers:
         specifier: ^14.2.1
         version: 14.2.1(knex@3.1.0)(vue@3.5.28(typescript@5.9.3))
       '@directus/utils':
-        specifier: ^13.2.0
-        version: 13.2.0(vue@3.5.28(typescript@5.9.3))
+        specifier: ^13.2.2
+        version: 13.2.2(vue@3.5.28(typescript@5.9.3))
       '@types/node':
         specifier: ^24.10.13
         version: 24.10.13
@@ -469,6 +469,14 @@ packages:
 
   '@directus/utils@13.2.0':
     resolution: {integrity: sha512-4KS9OtvXziS7txtudfsxDQAt58R+5BuyIzIjCHv5/ym1WgI+TFIRNfObzEO/gseWLzmjZ0UlPpG5ka7/VpVMGQ==}
+    peerDependencies:
+      vue: 3.5.24
+    peerDependenciesMeta:
+      vue:
+        optional: true
+
+  '@directus/utils@13.2.2':
+    resolution: {integrity: sha512-Vvbi1rtci9JWi8B2M0BooosxUXQMimoi7YsYTctnB2tb9+5NAvV9NNnwc3eseW3sagjexlDrV05I81Wa+8cOmg==}
     peerDependencies:
       vue: 3.5.24
     peerDependenciesMeta:
@@ -893,8 +901,8 @@ packages:
   '@hapi/pinpoint@2.0.1':
     resolution: {integrity: sha512-EKQmr16tM8s16vTT3cA5L0kZZcTMU5DUOZTuvpnY738m+jyP3JIUj+Mm1xc1rsLkGBQ/gVnfKYPwOmPg1tUR4Q==}
 
-  '@hapi/tlds@1.1.4':
-    resolution: {integrity: sha512-Fq+20dxsxLaUn5jSSWrdtSRcIUba2JquuorF9UW1wIJS5cSUwxIsO2GIhaWynPRflvxSzFN+gxKte2HEW1OuoA==}
+  '@hapi/tlds@1.1.6':
+    resolution: {integrity: sha512-xdi7A/4NZokvV0ewovme3aUO5kQhW9pQ2YD1hRqZGhhSi5rBv4usHYidVocXSi9eihYsznZxLtAiEYYUL6VBGw==}
     engines: {node: '>=14.0.0'}
 
   '@hapi/topo@6.0.2':
@@ -5840,9 +5848,9 @@ snapshots:
     optionalDependencies:
       vue: 3.5.24(typescript@5.9.3)
 
-  '@directus/utils@13.2.0(vue@3.5.28(typescript@5.9.3))':
+  '@directus/utils@13.2.2(vue@3.5.28(typescript@5.9.3))':
     dependencies:
-      '@directus/constants': 14.0.0
+      '@directus/constants': 14.1.0
       '@directus/system-data': 4.1.0
       date-fns: 4.1.0
       fs-extra: 11.3.2
@@ -6136,7 +6144,7 @@ snapshots:
 
   '@hapi/pinpoint@2.0.1': {}
 
-  '@hapi/tlds@1.1.4': {}
+  '@hapi/tlds@1.1.6': {}
 
   '@hapi/topo@6.0.2':
     dependencies:
@@ -8837,7 +8845,7 @@ snapshots:
       '@hapi/formula': 3.0.2
       '@hapi/hoek': 11.0.7
       '@hapi/pinpoint': 2.0.1
-      '@hapi/tlds': 1.1.4
+      '@hapi/tlds': 1.1.6
       '@hapi/topo': 6.0.2
       '@standard-schema/spec': 1.1.0
 
