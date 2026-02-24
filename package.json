@@ -28,8 +28,8 @@
 		"validate": "turbo validate"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^20.4.1",
-		"@commitlint/config-conventional": "^20.4.1",
+		"@commitlint/cli": "^20.4.2",
+		"@commitlint/config-conventional": "^20.4.2",
 		"@directus/eslint-config": "^0.1.0",
 		"@semantic-release/changelog": "^6.0.3",
 		"@semantic-release/exec": "^7.1.0",
