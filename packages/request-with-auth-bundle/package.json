@@ -76,7 +76,7 @@
 		"axios": "^1.13.5",
 		"encodeurl": "^2.0.0",
 		"typescript": "^5.9.3",
-		"vue": "^3.5.28"
+		"vue": "^3.5.29"
 	},
 	"publishConfig": {
 		"access": "public"
