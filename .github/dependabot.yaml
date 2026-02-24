@@ -5,6 +5,7 @@ updates:
     directory: /
     schedule:
       interval: weekly
+      day: sunday
     commit-message:
       prefix: chore
 
@@ -12,12 +13,18 @@ updates:
     directory: /
     schedule:
       interval: weekly
+      day: sunday
     commit-message:
       prefix: chore
 
   - package-ecosystem: npm
     directory: /
+    groups:
+      commitlint:
+        patterns:
+          - '@commitlint/*'
     schedule:
       interval: weekly
+      day: monday
     commit-message:
       prefix: chore
