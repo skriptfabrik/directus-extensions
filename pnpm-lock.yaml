@@ -62,8 +62,8 @@ importers:
         specifier: ^14.2.1
         version: 14.2.1(knex@3.1.0)(vue@3.5.29(typescript@5.9.3))
       '@directus/utils':
-        specifier: ^13.2.2
-        version: 13.2.2(vue@3.5.29(typescript@5.9.3))
+        specifier: ^13.3.0
+        version: 13.3.0(vue@3.5.29(typescript@5.9.3))
       '@types/node':
         specifier: ^24.11.0
         version: 24.11.0
@@ -347,6 +347,9 @@ packages:
   '@directus/constants@14.1.0':
     resolution: {integrity: sha512-R0Tskv59JKVFDmzmtgDoZNJkxuLnjAIb0/h8aYw1q2TdJ6TGF8PuV0J6HljPW26Iit9+QmoVV5WatQHfWpMVpQ==}
 
+  '@directus/constants@14.2.0':
+    resolution: {integrity: sha512-F6918ZQ/2y5xIoKELt702fjocORXprrXzo9UQ23HwMAOJvPEcmR0MXOfyLDfNW7dA3+oMb4icTE8bn4wRHgIBg==}
+
   '@directus/eslint-config@0.1.0':
     resolution: {integrity: sha512-oe3KiKlBCHpk4AwUx1YRPQgZ466TeBWCeqSk3aAx6odVQ2hFdlVN6VbW4/6TycrvjuSM+qlw1n3qTyuJr4K0Og==}
     engines: {node: '>=22', pnpm: '10'}
@@ -380,6 +383,9 @@ packages:
 
   '@directus/system-data@4.1.0':
     resolution: {integrity: sha512-4Rt+6xnUdfbrWYYUwDI13jBysQ2Vu+0/Hcs2m+R5Z7/UgUGdeibY7zhRQyY8UCxRqH04BI5VtgayHI9H/KzVBg==}
+
+  '@directus/system-data@4.2.0':
+    resolution: {integrity: sha512-e5ccJC+R80FWr4Ngv5TbwZbO18CPDPQppx+8zgh3OlYad7mZBdb5tzDEXymhOOG6YzD+hYRJ9DyznNvLQKpEnQ==}
 
   '@directus/themes@1.2.4':
     resolution: {integrity: sha512-7545OAAE0TfOzbvYkP2/gExEhWCabRscfgUh/tAYtEk/BCX0woeINyT2heP9v/wBS+9V6+2xW6TV8TksJX3Zwg==}
@@ -428,6 +434,14 @@ packages:
 
   '@directus/utils@13.2.2':
     resolution: {integrity: sha512-Vvbi1rtci9JWi8B2M0BooosxUXQMimoi7YsYTctnB2tb9+5NAvV9NNnwc3eseW3sagjexlDrV05I81Wa+8cOmg==}
+    peerDependencies:
+      vue: 3.5.24
+    peerDependenciesMeta:
+      vue:
+        optional: true
+
+  '@directus/utils@13.3.0':
+    resolution: {integrity: sha512-9cZT2/qpt/V7Vu6WO9X4jru8f4K16fO6W48oVILmVEarbQReEHkruI25OB8zAG7AUuuf2nsMGuV2GUIe4V6u6Q==}
     peerDependencies:
       vue: 3.5.24
     peerDependenciesMeta:
@@ -2809,8 +2823,8 @@ packages:
     resolution: {integrity: sha512-Xr9F6z6up6Ws+NjzMCZc6WXg2YFRlrLP9NQDO3VQrWrfiojdhS56TzueT88ze0uBdCTwEIhQ3ptnmKeWGFAe0A==}
     engines: {node: '>=14.14'}
 
-  fs-extra@11.3.3:
-    resolution: {integrity: sha512-VWSRii4t0AFm6ixFFmLLx1t7wS1gh+ckoa84aOeapGum0h+EZd1EhEumSB+ZdDLnEPuucsVB9oB7cxJHap6Afg==}
+  fs-extra@11.3.4:
+    resolution: {integrity: sha512-CTXd6rk/M3/ULNQj8FBqBWHYBVYybQ3VPBw0xGKFe3tuH7ytT6ACnvzpIQ3UZtB8yvUKC2cXn1a+x+5EVQLovA==}
     engines: {node: '>=14.14'}
 
   fsevents@2.3.3:
@@ -5470,6 +5484,8 @@ snapshots:
 
   '@directus/constants@14.1.0': {}
 
+  '@directus/constants@14.2.0': {}
+
   '@directus/eslint-config@0.1.0(@typescript-eslint/utils@8.54.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-sfc@3.5.29)(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)':
     dependencies:
       '@dprint/formatter': 0.4.1
@@ -5687,6 +5703,8 @@ snapshots:
 
   '@directus/system-data@4.1.0': {}
 
+  '@directus/system-data@4.2.0': {}
+
   '@directus/themes@1.2.4(@unhead/vue@1.11.20(vue@3.5.29(typescript@5.9.3)))(pinia@2.3.1(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3)))(vue@3.5.24(typescript@5.9.3))':
     dependencies:
       '@directus/utils': 13.2.2(vue@3.5.24(typescript@5.9.3))
@@ -5764,13 +5782,12 @@ snapshots:
     optionalDependencies:
       vue: 3.5.24(typescript@5.9.3)
 
-  '@directus/utils@13.2.2(vue@3.5.29(typescript@5.9.3))':
+  '@directus/utils@13.3.0(vue@3.5.29(typescript@5.9.3))':
     dependencies:
-      '@directus/constants': 14.1.0
-      '@directus/system-data': 4.1.0
+      '@directus/constants': 14.2.0
+      '@directus/system-data': 4.2.0
       date-fns: 4.1.0
       fs-extra: 11.3.2
-      ip-matching: 2.1.2
       joi: 18.0.1
       js-yaml: 4.1.1
       lodash-es: 4.17.21
@@ -6689,7 +6706,7 @@ snapshots:
       aggregate-error: 5.0.0
       env-ci: 11.2.0
       execa: 9.6.0
-      fs-extra: 11.3.3
+      fs-extra: 11.3.4
       lodash-es: 4.17.21
       nerf-dart: 1.0.0
       normalize-url: 8.1.1
@@ -8411,7 +8428,7 @@ snapshots:
       jsonfile: 6.2.0
       universalify: 2.0.1
 
-  fs-extra@11.3.3:
+  fs-extra@11.3.4:
     dependencies:
       graceful-fs: 4.2.11
       jsonfile: 6.2.0
@@ -9889,7 +9906,7 @@ snapshots:
       '@rollup/pluginutils': 5.3.0(rollup@4.52.5)
       cosmiconfig: 8.3.6(typescript@5.9.3)
       cssnano: 7.1.2(postcss@8.5.6)
-      fs-extra: 11.3.3
+      fs-extra: 11.3.4
       icss-utils: 5.1.0(postcss@8.5.6)
       mime-types: 2.1.35
       p-queue: 8.1.1
