@@ -51,7 +51,7 @@ jobs:
 
       - name: 📝 Add pull request comment
         if: ${{ !cancelled() && steps.lint-report.outcome == 'success' && github.event.pull_request.head.repo.full_name == github.repository }}
-        uses: marocchino/sticky-pull-request-comment@v2
+        uses: marocchino/sticky-pull-request-comment@v3
         with:
           header: lint-report
           message: ${{ steps.lint-report.outputs.summary }}
