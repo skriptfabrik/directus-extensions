@@ -62,8 +62,8 @@ importers:
         specifier: ^14.3.0
         version: 14.3.0(knex@3.1.0)(vue@3.5.29(typescript@5.9.3))
       '@directus/utils':
-        specifier: ^13.3.0
-        version: 13.3.0(vue@3.5.29(typescript@5.9.3))
+        specifier: ^13.3.1
+        version: 13.3.1(vue@3.5.29(typescript@5.9.3))
       '@types/node':
         specifier: ^24.11.0
         version: 24.11.0
@@ -379,8 +379,8 @@ packages:
   '@directus/system-data@4.1.0':
     resolution: {integrity: sha512-4Rt+6xnUdfbrWYYUwDI13jBysQ2Vu+0/Hcs2m+R5Z7/UgUGdeibY7zhRQyY8UCxRqH04BI5VtgayHI9H/KzVBg==}
 
-  '@directus/system-data@4.2.0':
-    resolution: {integrity: sha512-e5ccJC+R80FWr4Ngv5TbwZbO18CPDPQppx+8zgh3OlYad7mZBdb5tzDEXymhOOG6YzD+hYRJ9DyznNvLQKpEnQ==}
+  '@directus/system-data@4.3.0':
+    resolution: {integrity: sha512-f5LbQvCYNZ2clAJS5GV9F/yxTif7kcDLPZwJ0ahQF0GbIWzhGD6fzSvT4wNZEe/G+JvjZA5dkI8e3EGN7ChgHA==}
 
   '@directus/themes@1.2.4':
     resolution: {integrity: sha512-7545OAAE0TfOzbvYkP2/gExEhWCabRscfgUh/tAYtEk/BCX0woeINyT2heP9v/wBS+9V6+2xW6TV8TksJX3Zwg==}
@@ -473,8 +473,8 @@ packages:
       vue:
         optional: true
 
-  '@directus/utils@13.3.0':
-    resolution: {integrity: sha512-9cZT2/qpt/V7Vu6WO9X4jru8f4K16fO6W48oVILmVEarbQReEHkruI25OB8zAG7AUuuf2nsMGuV2GUIe4V6u6Q==}
+  '@directus/utils@13.3.1':
+    resolution: {integrity: sha512-liUZV+WvQpsIXqtmfDQOuh6llw8QCBrBFJXalOndyUpsKaoKhAxRyy8P2gk0K+Yju/gTaOQxGNXq0ANpkm7gdw==}
     peerDependencies:
       vue: 3.5.24
     peerDependenciesMeta:
@@ -3354,6 +3354,9 @@ packages:
   lodash-es@4.17.21:
     resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
 
+  lodash-es@4.17.23:
+    resolution: {integrity: sha512-kVI48u3PZr38HdYz98UmfPnXl2DXrpdctLrFLCd3kOx1xUkOmpFPx7gCWWM5MPkL/fD8zb+Ph0QzjGFs4+hHWg==}
+
   lodash.camelcase@4.3.0:
     resolution: {integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==}
 
@@ -5719,7 +5722,7 @@ snapshots:
 
   '@directus/system-data@4.1.0': {}
 
-  '@directus/system-data@4.2.0': {}
+  '@directus/system-data@4.3.0': {}
 
   '@directus/themes@1.2.4(@unhead/vue@1.11.20(vue@3.5.29(typescript@5.9.3)))(pinia@2.3.1(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3)))(vue@3.5.24(typescript@5.9.3))':
     dependencies:
@@ -5798,15 +5801,15 @@ snapshots:
     optionalDependencies:
       vue: 3.5.24(typescript@5.9.3)
 
-  '@directus/utils@13.3.0(vue@3.5.29(typescript@5.9.3))':
+  '@directus/utils@13.3.1(vue@3.5.29(typescript@5.9.3))':
     dependencies:
       '@directus/constants': 14.2.0
-      '@directus/system-data': 4.2.0
+      '@directus/system-data': 4.3.0
       date-fns: 4.1.0
       fs-extra: 11.3.2
       joi: 18.0.1
       js-yaml: 4.1.1
-      lodash-es: 4.17.21
+      lodash-es: 4.17.23
       micromustache: 8.0.3
       zod: 4.1.12
     optionalDependencies:
@@ -6670,7 +6673,7 @@ snapshots:
       conventional-commits-parser: 6.2.1
       debug: 4.4.3
       import-from-esm: 2.0.0
-      lodash-es: 4.17.21
+      lodash-es: 4.17.23
       micromatch: 4.0.8
       semantic-release: 25.0.3(typescript@5.9.3)
     transitivePeerDependencies:
@@ -6705,7 +6708,7 @@ snapshots:
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
       issue-parser: 7.0.1
-      lodash-es: 4.17.21
+      lodash-es: 4.17.23
       mime: 4.1.0
       p-filter: 4.1.0
       semantic-release: 25.0.3(typescript@5.9.3)
@@ -6723,7 +6726,7 @@ snapshots:
       env-ci: 11.2.0
       execa: 9.6.0
       fs-extra: 11.3.4
-      lodash-es: 4.17.21
+      lodash-es: 4.17.23
       nerf-dart: 1.0.0
       normalize-url: 8.1.1
       npm: 11.9.0
@@ -6744,7 +6747,7 @@ snapshots:
       get-stream: 7.0.1
       import-from-esm: 2.0.0
       into-stream: 7.0.0
-      lodash-es: 4.17.21
+      lodash-es: 4.17.23
       read-package-up: 11.0.0
       semantic-release: 25.0.3(typescript@5.9.3)
     transitivePeerDependencies:
@@ -8902,6 +8905,8 @@ snapshots:
       p-locate: 5.0.0
 
   lodash-es@4.17.21: {}
+
+  lodash-es@4.17.23: {}
 
   lodash.camelcase@4.3.0: {}
 
