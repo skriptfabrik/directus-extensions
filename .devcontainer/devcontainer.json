@@ -4,7 +4,7 @@
 	"image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu-24.04",
 	"features": {
 		"ghcr.io/devcontainers-extra/features/mise:1": {
-			"version": "2026.2.0"
+			"version": "latest"
 		}
 	},
 	"customizations": {
@@ -19,9 +19,25 @@
 				"github.vscode-github-actions",
 				"github.vscode-pull-request-github",
 				"hverlin.mise-vscode",
+				"tamasfe.even-better-toml",
 				"vercel.turbo-vsc"
 			]
 		}
 	},
-	"postCreateCommand": "mise trust && mise up && mise run install"
+	"mounts": [
+		{
+			"source": "vscode-local-data",
+			"target": "/home/vscode/.local",
+			"type": "volume"
+		}
+	],
+	"containerEnv": {
+		"MISE_TRUSTED_CONFIG_PATHS": "${containerWorkspaceFolder}"
+	},
+	"remoteEnv": {
+		"MISE_EXPERIMENTAL": "true",
+		"MISE_LOCKFILE": "true"
+	},
+	"onCreateCommand": ".devcontainer/hooks/on-create.sh",
+	"postCreateCommand": ".devcontainer/hooks/post-create.sh"
 }
