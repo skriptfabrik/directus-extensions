@@ -62,8 +62,8 @@ importers:
         specifier: ^14.3.0
         version: 14.3.1(knex@3.1.0)(vue@3.5.30(typescript@5.9.3))
       '@directus/utils':
-        specifier: ^13.3.1
-        version: 13.3.1(vue@3.5.30(typescript@5.9.3))
+        specifier: ^13.3.2
+        version: 13.3.2(vue@3.5.30(typescript@5.9.3))
       '@types/node':
         specifier: ^24.12.0
         version: 24.12.0
@@ -355,6 +355,9 @@ packages:
   '@directus/constants@14.2.0':
     resolution: {integrity: sha512-F6918ZQ/2y5xIoKELt702fjocORXprrXzo9UQ23HwMAOJvPEcmR0MXOfyLDfNW7dA3+oMb4icTE8bn4wRHgIBg==}
 
+  '@directus/constants@14.3.0':
+    resolution: {integrity: sha512-mf4CEm0q/pVlfbkvFc2JuCpas4BJS6ldLtYqLUA1uqzBJg1eP7OWxp6DF27kZmNeDUgN1Wbzbt9TI3qTJMd8FA==}
+
   '@directus/eslint-config@0.1.0':
     resolution: {integrity: sha512-oe3KiKlBCHpk4AwUx1YRPQgZ466TeBWCeqSk3aAx6odVQ2hFdlVN6VbW4/6TycrvjuSM+qlw1n3qTyuJr4K0Og==}
     engines: {node: '>=22', pnpm: '10'}
@@ -388,6 +391,9 @@ packages:
 
   '@directus/system-data@4.3.0':
     resolution: {integrity: sha512-f5LbQvCYNZ2clAJS5GV9F/yxTif7kcDLPZwJ0ahQF0GbIWzhGD6fzSvT4wNZEe/G+JvjZA5dkI8e3EGN7ChgHA==}
+
+  '@directus/system-data@4.4.0':
+    resolution: {integrity: sha512-4uVp2J1eLokE7NQQwlY3ssEA2/wPZpF/LYeWQ8oaV7GM77dLOvRarRiIzXUjiHvLk8kfjfOkYDlfi+mGZaqxMA==}
 
   '@directus/themes@1.2.6':
     resolution: {integrity: sha512-09K2sTfspJp4l6L+UniE3DSFaSiQOSYk3SXCEaX0XCydKtZVusSIVTCu1v/owV7E0I/Xf+PzHQ9lFEZQpZtVMw==}
@@ -436,6 +442,14 @@ packages:
 
   '@directus/utils@13.3.1':
     resolution: {integrity: sha512-liUZV+WvQpsIXqtmfDQOuh6llw8QCBrBFJXalOndyUpsKaoKhAxRyy8P2gk0K+Yju/gTaOQxGNXq0ANpkm7gdw==}
+    peerDependencies:
+      vue: 3.5.24
+    peerDependenciesMeta:
+      vue:
+        optional: true
+
+  '@directus/utils@13.3.2':
+    resolution: {integrity: sha512-Dipx8Y/5Rlb6iCodtbwkeHhycjfKXBSpt/DaZOrC1PZXu/Y6Hwch7CgCDW61wHCmBbsGutZHjm5OS+lIMh8t+Q==}
     peerDependencies:
       vue: 3.5.24
     peerDependenciesMeta:
@@ -860,8 +874,8 @@ packages:
   '@hapi/pinpoint@2.0.1':
     resolution: {integrity: sha512-EKQmr16tM8s16vTT3cA5L0kZZcTMU5DUOZTuvpnY738m+jyP3JIUj+Mm1xc1rsLkGBQ/gVnfKYPwOmPg1tUR4Q==}
 
-  '@hapi/tlds@1.1.4':
-    resolution: {integrity: sha512-Fq+20dxsxLaUn5jSSWrdtSRcIUba2JquuorF9UW1wIJS5cSUwxIsO2GIhaWynPRflvxSzFN+gxKte2HEW1OuoA==}
+  '@hapi/tlds@1.1.6':
+    resolution: {integrity: sha512-xdi7A/4NZokvV0ewovme3aUO5kQhW9pQ2YD1hRqZGhhSi5rBv4usHYidVocXSi9eihYsznZxLtAiEYYUL6VBGw==}
     engines: {node: '>=14.0.0'}
 
   '@hapi/topo@6.0.2':
@@ -3010,8 +3024,8 @@ packages:
     resolution: {integrity: sha512-Xr9F6z6up6Ws+NjzMCZc6WXg2YFRlrLP9NQDO3VQrWrfiojdhS56TzueT88ze0uBdCTwEIhQ3ptnmKeWGFAe0A==}
     engines: {node: '>=14.14'}
 
-  fs-extra@11.3.3:
-    resolution: {integrity: sha512-VWSRii4t0AFm6ixFFmLLx1t7wS1gh+ckoa84aOeapGum0h+EZd1EhEumSB+ZdDLnEPuucsVB9oB7cxJHap6Afg==}
+  fs-extra@11.3.4:
+    resolution: {integrity: sha512-CTXd6rk/M3/ULNQj8FBqBWHYBVYybQ3VPBw0xGKFe3tuH7ytT6ACnvzpIQ3UZtB8yvUKC2cXn1a+x+5EVQLovA==}
     engines: {node: '>=14.14'}
 
   fsevents@2.3.3:
@@ -5643,6 +5657,8 @@ snapshots:
 
   '@directus/constants@14.2.0': {}
 
+  '@directus/constants@14.3.0': {}
+
   '@directus/eslint-config@0.1.0(@typescript-eslint/utils@8.54.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-sfc@3.5.30)(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)':
     dependencies:
       '@dprint/formatter': 0.4.1
@@ -5860,6 +5876,8 @@ snapshots:
 
   '@directus/system-data@4.3.0': {}
 
+  '@directus/system-data@4.4.0': {}
+
   '@directus/themes@1.2.6(@unhead/vue@1.11.20(vue@3.5.30(typescript@5.9.3)))(pinia@2.3.1(typescript@5.9.3)(vue@3.5.30(typescript@5.9.3)))(vue@3.5.24(typescript@5.9.3))':
     dependencies:
       '@directus/utils': 13.3.1(vue@3.5.24(typescript@5.9.3))
@@ -5936,10 +5954,10 @@ snapshots:
     optionalDependencies:
       vue: 3.5.24(typescript@5.9.3)
 
-  '@directus/utils@13.3.1(vue@3.5.30(typescript@5.9.3))':
+  '@directus/utils@13.3.2(vue@3.5.30(typescript@5.9.3))':
     dependencies:
-      '@directus/constants': 14.2.0
-      '@directus/system-data': 4.3.0
+      '@directus/constants': 14.3.0
+      '@directus/system-data': 4.4.0
       date-fns: 4.1.0
       fs-extra: 11.3.2
       joi: 18.0.1
@@ -6231,7 +6249,7 @@ snapshots:
 
   '@hapi/pinpoint@2.0.1': {}
 
-  '@hapi/tlds@1.1.4': {}
+  '@hapi/tlds@1.1.6': {}
 
   '@hapi/topo@6.0.2':
     dependencies:
@@ -6881,7 +6899,7 @@ snapshots:
       conventional-commits-parser: 6.2.1
       debug: 4.4.3
       import-from-esm: 2.0.0
-      lodash-es: 4.17.21
+      lodash-es: 4.17.23
       micromatch: 4.0.8
       semantic-release: 25.0.3(typescript@5.9.3)
     transitivePeerDependencies:
@@ -6916,7 +6934,7 @@ snapshots:
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
       issue-parser: 7.0.1
-      lodash-es: 4.17.21
+      lodash-es: 4.17.23
       mime: 4.1.0
       p-filter: 4.1.0
       semantic-release: 25.0.3(typescript@5.9.3)
@@ -6933,8 +6951,8 @@ snapshots:
       aggregate-error: 5.0.0
       env-ci: 11.2.0
       execa: 9.6.0
-      fs-extra: 11.3.3
-      lodash-es: 4.17.21
+      fs-extra: 11.3.4
+      lodash-es: 4.17.23
       nerf-dart: 1.0.0
       normalize-url: 8.1.1
       npm: 11.9.0
@@ -6955,7 +6973,7 @@ snapshots:
       get-stream: 7.0.1
       import-from-esm: 2.0.0
       into-stream: 7.0.0
-      lodash-es: 4.17.21
+      lodash-es: 4.17.23
       read-package-up: 11.0.0
       semantic-release: 25.0.3(typescript@5.9.3)
     transitivePeerDependencies:
@@ -8693,7 +8711,7 @@ snapshots:
       jsonfile: 6.2.0
       universalify: 2.0.1
 
-  fs-extra@11.3.3:
+  fs-extra@11.3.4:
     dependencies:
       graceful-fs: 4.2.11
       jsonfile: 6.2.0
@@ -9004,7 +9022,7 @@ snapshots:
       '@hapi/formula': 3.0.2
       '@hapi/hoek': 11.0.7
       '@hapi/pinpoint': 2.0.1
-      '@hapi/tlds': 1.1.4
+      '@hapi/tlds': 1.1.6
       '@hapi/topo': 6.0.2
       '@standard-schema/spec': 1.1.0
 
@@ -10199,7 +10217,7 @@ snapshots:
       '@rollup/pluginutils': 5.3.0(rollup@4.59.0)
       cosmiconfig: 8.3.6(typescript@5.9.3)
       cssnano: 7.1.2(postcss@8.5.6)
-      fs-extra: 11.3.3
+      fs-extra: 11.3.4
       icss-utils: 5.1.0(postcss@8.5.6)
       mime-types: 2.1.35
       p-queue: 8.1.1
