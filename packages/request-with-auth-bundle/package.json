@@ -69,7 +69,7 @@
 		"validate": "directus-extension validate"
 	},
 	"devDependencies": {
-		"@directus/extensions-sdk": "17.1.1",
+		"@directus/extensions-sdk": "17.1.2",
 		"@directus/types": "^15.0.1",
 		"@directus/utils": "^13.4.0",
 		"@types/node": "^24.12.2",
