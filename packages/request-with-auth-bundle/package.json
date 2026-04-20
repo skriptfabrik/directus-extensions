@@ -73,7 +73,7 @@
 		"@directus/types": "^15.0.1",
 		"@directus/utils": "^13.4.0",
 		"@types/node": "^24.12.2",
-		"axios": "^1.15.0",
+		"axios": "^1.15.1",
 		"encodeurl": "^2.0.0",
 		"typescript": "^5.9.3",
 		"vue": "^3.5.32"
