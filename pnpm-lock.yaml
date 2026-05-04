@@ -62,8 +62,8 @@ importers:
         specifier: ^15.0.1
         version: 15.0.1(knex@3.1.0)(vue@3.5.33(typescript@5.9.3))
       '@directus/utils':
-        specifier: ^13.4.0
-        version: 13.4.0(vue@3.5.33(typescript@5.9.3))
+        specifier: ^13.4.1
+        version: 13.4.1(vue@3.5.33(typescript@5.9.3))
       '@types/node':
         specifier: ^24.12.2
         version: 24.12.2
@@ -476,6 +476,14 @@ packages:
 
   '@directus/utils@13.4.0':
     resolution: {integrity: sha512-ZqNBzFYDTZhAPvcOcY5+F3S0ZPXDki/utHn322nW/LjfRbnMVJcSEoOw6Q9ct2WzSawQnIJdX4s2xJP+65AT8Q==}
+    peerDependencies:
+      vue: 3.5.24
+    peerDependenciesMeta:
+      vue:
+        optional: true
+
+  '@directus/utils@13.4.1':
+    resolution: {integrity: sha512-GMaWQjF5ss+96UgiuZv0hrr7ftqmLQDt9G/iddy6NxWX2ZKSSsyHi+9pkrFYJo4wpPHZZS5q0PPPzO9+/ufj1A==}
     peerDependencies:
       vue: 3.5.24
     peerDependenciesMeta:
@@ -6032,7 +6040,7 @@ snapshots:
     optionalDependencies:
       vue: 3.5.24(typescript@5.9.3)
 
-  '@directus/utils@13.4.0(vue@3.5.33(typescript@5.9.3))':
+  '@directus/utils@13.4.1(vue@3.5.33(typescript@5.9.3))':
     dependencies:
       '@directus/constants': 14.3.0
       '@directus/system-data': 4.4.0
@@ -6040,7 +6048,7 @@ snapshots:
       fs-extra: 11.3.2
       joi: 18.0.1
       js-yaml: 4.1.1
-      lodash-es: 4.17.23
+      lodash-es: 4.18.1
       micromustache: 8.0.3
       zod: 4.1.12
     optionalDependencies:
@@ -6957,7 +6965,7 @@ snapshots:
       conventional-commits-parser: 6.2.1
       debug: 4.4.3
       import-from-esm: 2.0.0
-      lodash-es: 4.17.21
+      lodash-es: 4.18.1
       micromatch: 4.0.8
       semantic-release: 25.0.3(typescript@5.9.3)
     transitivePeerDependencies:
@@ -6992,7 +7000,7 @@ snapshots:
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
       issue-parser: 7.0.1
-      lodash-es: 4.17.21
+      lodash-es: 4.18.1
       mime: 4.1.0
       p-filter: 4.1.0
       semantic-release: 25.0.3(typescript@5.9.3)
@@ -7010,7 +7018,7 @@ snapshots:
       env-ci: 11.2.0
       execa: 9.6.0
       fs-extra: 11.3.4
-      lodash-es: 4.17.21
+      lodash-es: 4.18.1
       nerf-dart: 1.0.0
       normalize-url: 8.1.1
       npm: 11.9.0
@@ -7031,7 +7039,7 @@ snapshots:
       get-stream: 7.0.1
       import-from-esm: 2.0.0
       into-stream: 7.0.0
-      lodash-es: 4.17.21
+      lodash-es: 4.18.1
       read-package-up: 11.0.0
       semantic-release: 25.0.3(typescript@5.9.3)
     transitivePeerDependencies:
