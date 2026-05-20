@@ -1,5 +1,6 @@
 {
 	"name": "@skriptfabrik/directus-extensions",
+	"version": "0.0.0",
 	"private": true,
 	"packageManager": "pnpm@10.33.0",
 	"description": "Extensions for Directus",
@@ -15,7 +16,7 @@
 		"fix:code": "eslint --fix",
 		"fix:deps": "knip --fix",
 		"fix:markdown": "markdownlint-cli2 --fix",
-		"fix:versions": "syncpack fix-mismatches",
+		"fix:versions": "syncpack fix",
 		"format:style": "prettier --write .",
 		"format:versions": "syncpack format",
 		"link": "turbo link",
