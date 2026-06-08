@@ -72,7 +72,7 @@
 		"@directus/extensions-sdk": "17.1.4",
 		"@directus/types": "^15.0.3",
 		"@directus/utils": "^13.4.1",
-		"@types/node": "^24.12.4",
+		"@types/node": "^24.13.1",
 		"axios": "^1.16.1",
 		"encodeurl": "^2.0.0",
 		"typescript": "^5.9.3",
