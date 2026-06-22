@@ -62,8 +62,8 @@ importers:
         specifier: ^15.0.3
         version: 15.0.3(knex@3.1.0)(vue@3.5.38(typescript@5.9.3))
       '@directus/utils':
-        specifier: ^13.4.1
-        version: 13.4.1(vue@3.5.38(typescript@5.9.3))
+        specifier: ^13.5.0
+        version: 13.5.0(vue@3.5.38(typescript@5.9.3))
       '@types/node':
         specifier: ^24.13.1
         version: 24.13.1
@@ -362,6 +362,9 @@ packages:
   '@directus/constants@14.3.0':
     resolution: {integrity: sha512-mf4CEm0q/pVlfbkvFc2JuCpas4BJS6ldLtYqLUA1uqzBJg1eP7OWxp6DF27kZmNeDUgN1Wbzbt9TI3qTJMd8FA==}
 
+  '@directus/constants@14.4.0':
+    resolution: {integrity: sha512-5/B6XccEc8ml3UZoKpihitrEk7XY1Rwx0QSoAOuvxBzwbTtBahKhY9OnTTIWt8h47Pc5j2djn85S6W+xhzAOXg==}
+
   '@directus/eslint-config@0.1.0':
     resolution: {integrity: sha512-oe3KiKlBCHpk4AwUx1YRPQgZ466TeBWCeqSk3aAx6odVQ2hFdlVN6VbW4/6TycrvjuSM+qlw1n3qTyuJr4K0Og==}
     engines: {node: '>=22', pnpm: '10'}
@@ -395,6 +398,9 @@ packages:
 
   '@directus/system-data@4.4.0':
     resolution: {integrity: sha512-4uVp2J1eLokE7NQQwlY3ssEA2/wPZpF/LYeWQ8oaV7GM77dLOvRarRiIzXUjiHvLk8kfjfOkYDlfi+mGZaqxMA==}
+
+  '@directus/system-data@4.5.0':
+    resolution: {integrity: sha512-TkRFzKu35GLEHhHkEo32cfLnVUjZC+FXj0cPt6NWXWrBYy7iCOtWJE4N4yUSCC4SwlVE3KyeEd2Jmy83CPUDYQ==}
 
   '@directus/themes@1.3.3':
     resolution: {integrity: sha512-jw44ND/qyq5j9bGrC7/FXRpDw7yCq4p9FSRQyRDpJPe75XP+tmdQRCu2hJ5CvNJxjGUENxoawPuP/itfCl44kQ==}
@@ -443,6 +449,14 @@ packages:
 
   '@directus/utils@13.4.1':
     resolution: {integrity: sha512-GMaWQjF5ss+96UgiuZv0hrr7ftqmLQDt9G/iddy6NxWX2ZKSSsyHi+9pkrFYJo4wpPHZZS5q0PPPzO9+/ufj1A==}
+    peerDependencies:
+      vue: 3.5.24
+    peerDependenciesMeta:
+      vue:
+        optional: true
+
+  '@directus/utils@13.5.0':
+    resolution: {integrity: sha512-rdmLAJ9WciGEuIkOhVPr45+TjzJgvlE7KxsdeTQzgYGtSWP3Jo/0y/sT1aUJy0nxxr1m2ocfNZZipuFPIXZx+g==}
     peerDependencies:
       vue: 3.5.24
     peerDependenciesMeta:
@@ -717,8 +731,8 @@ packages:
   '@hapi/pinpoint@2.0.1':
     resolution: {integrity: sha512-EKQmr16tM8s16vTT3cA5L0kZZcTMU5DUOZTuvpnY738m+jyP3JIUj+Mm1xc1rsLkGBQ/gVnfKYPwOmPg1tUR4Q==}
 
-  '@hapi/tlds@1.1.6':
-    resolution: {integrity: sha512-xdi7A/4NZokvV0ewovme3aUO5kQhW9pQ2YD1hRqZGhhSi5rBv4usHYidVocXSi9eihYsznZxLtAiEYYUL6VBGw==}
+  '@hapi/tlds@1.1.7':
+    resolution: {integrity: sha512-MgNjRwy9Ti92yVAixLmDc8dd1bJIKwO9qlWCfFQRwRmUEDPQHYn4G6hwPFvFGUTzAa0FsS+inMjLin7GnyBRhA==}
     engines: {node: '>=14.0.0'}
 
   '@hapi/topo@6.0.2':
@@ -5681,6 +5695,8 @@ snapshots:
 
   '@directus/constants@14.3.0': {}
 
+  '@directus/constants@14.4.0': {}
+
   '@directus/eslint-config@0.1.0(@typescript-eslint/utils@8.54.0(eslint@9.39.2(jiti@2.7.0))(typescript@5.9.3))(@vue/compiler-sfc@3.5.38)(eslint@9.39.2(jiti@2.7.0))(typescript@5.9.3)':
     dependencies:
       '@dprint/formatter': 0.4.1
@@ -5898,6 +5914,8 @@ snapshots:
 
   '@directus/system-data@4.4.0': {}
 
+  '@directus/system-data@4.5.0': {}
+
   '@directus/themes@1.3.3(@unhead/vue@1.11.20(vue@3.5.38(typescript@5.9.3)))(pinia@2.3.1(typescript@5.9.3)(vue@3.5.38(typescript@5.9.3)))(vue@3.5.24(typescript@5.9.3))':
     dependencies:
       '@directus/utils': 13.4.1(vue@3.5.24(typescript@5.9.3))
@@ -5973,10 +5991,10 @@ snapshots:
     optionalDependencies:
       vue: 3.5.24(typescript@5.9.3)
 
-  '@directus/utils@13.4.1(vue@3.5.38(typescript@5.9.3))':
+  '@directus/utils@13.5.0(vue@3.5.38(typescript@5.9.3))':
     dependencies:
-      '@directus/constants': 14.3.0
-      '@directus/system-data': 4.4.0
+      '@directus/constants': 14.4.0
+      '@directus/system-data': 4.5.0
       date-fns: 4.1.0
       fs-extra: 11.3.2
       joi: 18.0.1
@@ -6201,7 +6219,7 @@ snapshots:
 
   '@hapi/pinpoint@2.0.1': {}
 
-  '@hapi/tlds@1.1.6': {}
+  '@hapi/tlds@1.1.7': {}
 
   '@hapi/topo@6.0.2':
     dependencies:
@@ -9052,7 +9070,7 @@ snapshots:
       '@hapi/formula': 3.0.2
       '@hapi/hoek': 11.0.7
       '@hapi/pinpoint': 2.0.1
-      '@hapi/tlds': 1.1.6
+      '@hapi/tlds': 1.1.7
       '@hapi/topo': 6.0.2
       '@standard-schema/spec': 1.1.0
 
