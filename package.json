@@ -41,7 +41,7 @@
 		"prettier": "^3.9.4",
 		"semantic-release": "^25.0.5",
 		"syncpack": "^15.3.2",
-		"turbo": "^2.9.16"
+		"turbo": "^2.10.4"
 	},
 	"pnpm": {
 		"patchedDependencies": {
