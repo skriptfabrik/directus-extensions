@@ -37,7 +37,7 @@
 		"eslint": "^9.39.2",
 		"eslint-config-prettier": "^10.1.8",
 		"knip": "^6.24.0",
-		"markdownlint-cli2": "^0.23.0",
+		"markdownlint-cli2": "^0.23.1",
 		"prettier": "^3.9.4",
 		"semantic-release": "^25.0.5",
 		"syncpack": "^15.3.2",
