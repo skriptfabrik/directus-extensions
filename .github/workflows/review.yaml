@@ -45,7 +45,7 @@ jobs:
       - name: 🚀 Update annotations and create lint report
         if: ${{ !cancelled() && (steps.lint-code.outcome == 'success' || steps.lint-code.outcome == 'failure') && github.event.pull_request.head.repo.full_name == github.repository }}
         id: lint-report
-        uses: ataylorme/eslint-annotate-action@03bec515858fea50353ff60e3c537678826650a4 # v4.0.0-beta.1
+        uses: ataylorme/eslint-annotate-action@5a8d8ab89a57679e90c32750e0f382e9d8570750 # v4.0.0-beta.1
         with:
           report-json: eslint-report.json
 
