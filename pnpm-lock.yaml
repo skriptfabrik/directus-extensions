@@ -62,8 +62,8 @@ importers:
         specifier: ^16.1.0
         version: 16.1.0(knex@3.1.0)(vue@3.5.41(typescript@6.0.3))
       '@directus/utils':
-        specifier: ^13.5.2
-        version: 13.5.2(vue@3.5.41(typescript@6.0.3))
+        specifier: ^13.5.3
+        version: 13.5.3(vue@3.5.41(typescript@6.0.3))
       '@types/node':
         specifier: ^24.13.3
         version: 24.13.3
@@ -318,6 +318,14 @@ packages:
 
   '@directus/utils@13.5.2':
     resolution: {integrity: sha512-m2f3Qck7K9JTAdYp1oZKhEWJjkQrrJiljirQQF5If51Sk5I82bm6Y3ruhK6xgIt65CPtcg2E2n+LLtWwrc307Q==}
+    peerDependencies:
+      vue: 3.5.24
+    peerDependenciesMeta:
+      vue:
+        optional: true
+
+  '@directus/utils@13.5.3':
+    resolution: {integrity: sha512-+XZw0x6zhYF75pQuPp2FlzBtNBjdCZQafvYeUvvQaigwgaagIt6sMT5+kOSQvdG0r24rHTb+8xUZBFTDhvrdoA==}
     peerDependencies:
       vue: 3.5.24
     peerDependenciesMeta:
@@ -3043,6 +3051,10 @@ packages:
     resolution: {integrity: sha512-IiQpRyypSnLisQf3PwuN2eIHAsAIGZIrLZkd4zdvIar2bDyhM91ubRjy8a3eYablXsh9BeI/c7dmPYHca5qtoA==}
     engines: {node: '>= 20'}
 
+  joi@18.2.3:
+    resolution: {integrity: sha512-N5A3KTWQpPWT4ExxxPlUx7WmykGXRzhNidWhV41d6Abu9YfI2NyWCJuxdPnslJCPWtbRpSVOWSnSS6GakLM/Rg==}
+    engines: {node: '>= 20'}
+
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -5321,18 +5333,17 @@ snapshots:
     optionalDependencies:
       vue: 3.5.24(typescript@6.0.3)
 
-  '@directus/utils@13.5.2(vue@3.5.41(typescript@6.0.3))':
+  '@directus/utils@13.5.3(vue@3.5.41(typescript@6.0.3))':
     dependencies:
       '@directus/constants': 14.4.1
       '@directus/system-data': 4.6.0
       date-fns: 4.1.0
       fs-extra: 11.3.2
       ipaddr.js: 2.4.0
-      joi: 18.0.1
-      js-yaml: 4.3.0
+      joi: 18.2.3
+      js-yaml: 4.3.1
       lodash-es: 4.18.1
       micromustache: 8.0.3
-      zod: 4.1.12
     optionalDependencies:
       vue: 3.5.41(typescript@6.0.3)
 
@@ -8114,6 +8125,16 @@ snapshots:
   jiti@2.7.0: {}
 
   joi@18.0.1:
+    dependencies:
+      '@hapi/address': 5.1.1
+      '@hapi/formula': 3.0.2
+      '@hapi/hoek': 11.0.7
+      '@hapi/pinpoint': 2.0.1
+      '@hapi/tlds': 1.1.7
+      '@hapi/topo': 6.0.2
+      '@standard-schema/spec': 1.1.0
+
+  joi@18.2.3:
     dependencies:
       '@hapi/address': 5.1.1
       '@hapi/formula': 3.0.2
