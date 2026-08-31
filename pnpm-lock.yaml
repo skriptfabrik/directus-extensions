@@ -62,8 +62,8 @@ importers:
         specifier: ^16.1.0
         version: 16.1.0(knex@3.1.0)(vue@3.5.41(typescript@6.0.3))
       '@directus/utils':
-        specifier: ^13.5.3
-        version: 13.5.3(vue@3.5.41(typescript@6.0.3))
+        specifier: ^13.5.4
+        version: 13.5.4(vue@3.5.41(typescript@6.0.3))
       '@types/node':
         specifier: ^24.13.3
         version: 24.13.3
@@ -271,6 +271,9 @@ packages:
   '@directus/system-data@4.6.0':
     resolution: {integrity: sha512-oP/8VMwbPvtmK6PK28vAQDNtSLw0nf7ml2BNRN3ed2GwdED40LYwE+3kFGz2IhUtu2nZwA28W596Z/twOmswSQ==}
 
+  '@directus/system-data@4.6.1':
+    resolution: {integrity: sha512-0jWbG50Gdp/VDptK7EakpO19iuL371RAtls3I284VcY3E0fXuIT1js3JqfFUAqR66CbTYbSJMX3bP/MRwe35hA==}
+
   '@directus/themes@2.0.2':
     resolution: {integrity: sha512-97VQsxq8Vc2cqwo8773OicgTCWE3IGefq+X+/pQfRwIdXTbcAv7KhBGZhgZuht7Wlju+v+4N6rVt8ujeXOmFrA==}
     peerDependencies:
@@ -324,8 +327,8 @@ packages:
       vue:
         optional: true
 
-  '@directus/utils@13.5.3':
-    resolution: {integrity: sha512-+XZw0x6zhYF75pQuPp2FlzBtNBjdCZQafvYeUvvQaigwgaagIt6sMT5+kOSQvdG0r24rHTb+8xUZBFTDhvrdoA==}
+  '@directus/utils@13.5.4':
+    resolution: {integrity: sha512-LYsiIOkqMBtZJiw8HwuO1HLDZN0WSVH71XuJ+fgI3sbZcYkniQjR76WBnuf2Ab7ZwjVK9Gh199FhegstwLjGAQ==}
     peerDependencies:
       vue: 3.5.24
     peerDependenciesMeta:
@@ -3066,6 +3069,10 @@ packages:
     resolution: {integrity: sha512-CY6crGq313MX8GkwvB7tzgp99vjQxY1++5y10/BKN/GUfHqWaOGQMNZkBvqSzsZKWk/ijwHlWzzkLulsGHhjWQ==}
     hasBin: true
 
+  js-yaml@4.3.2:
+    resolution: {integrity: sha512-SFNOvSJ+Dgf/9An904Yx+CgSlIPCkIpao4qo51lpee25TIRejdH3rhR4EZMGoNx3/TP3O+wzWuiTFl4sqbltzA==}
+    hasBin: true
+
   js-yaml@5.2.2:
     resolution: {integrity: sha512-dayzUzKkJ1MkuUtZglSebU43utNXH0OWQByK9rKOOuYIO8M5TV1y+n8ALMdG0rdzBnfNkOmZEqrURepb0ejqBw==}
     hasBin: true
@@ -5259,6 +5266,8 @@ snapshots:
 
   '@directus/system-data@4.6.0': {}
 
+  '@directus/system-data@4.6.1': {}
+
   '@directus/themes@2.0.2(@unhead/vue@1.11.20(vue@3.5.41(typescript@6.0.3)))(pinia@2.3.1(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3)))(vue@3.5.24(typescript@6.0.3))':
     dependencies:
       '@directus/utils': 13.5.2(vue@3.5.24(typescript@6.0.3))
@@ -5333,10 +5342,10 @@ snapshots:
     optionalDependencies:
       vue: 3.5.24(typescript@6.0.3)
 
-  '@directus/utils@13.5.3(vue@3.5.41(typescript@6.0.3))':
+  '@directus/utils@13.5.4(vue@3.5.41(typescript@6.0.3))':
     dependencies:
       '@directus/constants': 14.4.1
-      '@directus/system-data': 4.6.0
+      '@directus/system-data': 4.6.1
       date-fns: 4.1.0
       fs-extra: 11.3.2
       ipaddr.js: 2.4.0
@@ -5519,7 +5528,7 @@ snapshots:
       globals: 14.0.0
       ignore: 5.3.2
       import-fresh: 3.3.1
-      js-yaml: 4.3.1
+      js-yaml: 4.3.2
       minimatch: 3.1.2
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
@@ -7112,7 +7121,7 @@ snapshots:
   cosmiconfig@8.3.6(typescript@6.0.3):
     dependencies:
       import-fresh: 3.3.1
-      js-yaml: 4.3.1
+      js-yaml: 4.3.2
       parse-json: 5.2.0
       path-type: 4.0.0
     optionalDependencies:
@@ -7122,7 +7131,7 @@ snapshots:
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.1
-      js-yaml: 4.3.1
+      js-yaml: 4.3.2
       parse-json: 5.2.0
     optionalDependencies:
       typescript: 6.0.3
@@ -8151,6 +8160,10 @@ snapshots:
       argparse: 2.0.1
 
   js-yaml@4.3.1:
+    dependencies:
+      argparse: 2.0.1
+
+  js-yaml@4.3.2:
     dependencies:
       argparse: 2.0.1
 
