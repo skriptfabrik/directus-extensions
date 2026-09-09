@@ -35,8 +35,7 @@ export default defineOperationApi<Options>({
 		const { ItemsService, PayloadService } = services;
 		const payloadService = new PayloadService('app_secrets', {
 			schema: await getSchema(),
-			// @ts-expect-error admin is sufficient
-			accountability: { admin: true },
+			accountability: null,
 		});
 
 		const decryptString = async (value?: string) => {
@@ -66,8 +65,7 @@ export default defineOperationApi<Options>({
 
 		const itemsService = new ItemsService('app_secrets', {
 			schema: await getSchema(),
-			// @ts-expect-error admin is sufficient
-			accountability: { admin: true },
+			accountability: null,
 		});
 		let credential;
 
