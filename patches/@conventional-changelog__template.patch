@@ -1,0 +1,18 @@
+diff --git a/dist/elements.js b/dist/elements.js
+index 1a0ced045d45c8aa73b0e0ee92f944350c932ccd..7c3f714292324b404a7536a825bea03b70edb84e 100644
+--- a/dist/elements.js
++++ b/dist/elements.js
+@@ -51,10 +51,10 @@ export function list(array, callback) {
+         const itemText = rendered
+             .split(/\r?\n/)
+             .map((line, index) => (index > 0 && line
+-            ? `  ${line}`
+-            : line))
++                ? `  ${line}`
++                : line))
+             .join('\n');
+-        return rendered ? `* ${itemText}` : '';
++        return rendered ? `- ${itemText}` : '';
+     });
+ }
+ /**
