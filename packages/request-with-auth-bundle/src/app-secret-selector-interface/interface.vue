@@ -21,9 +21,21 @@ const selectedSecret = computed(() =>
 );
 const editableSecret = ref<Partial<AppSecretPayload>>();
 
+// Depending on the database driver, Directus returns a `json` column either
+// pre-parsed (e.g. Postgres/MySQL) or as a raw JSON string (e.g. SQLite).
+const parseFields = (
+	fields: AppSecret['fields'] | string | null,
+): AppSecret['fields'] => {
+	if (typeof fields !== 'string') return fields ?? {};
+	return JSON.parse(fields || '{}') as AppSecret['fields'];
+};
+
 async function fetchSecrets() {
 	const response = await api.get('/items/app_secrets?limit=-1');
-	appSecrets.value = response.data.data as AppSecret[];
+
+	appSecrets.value = (response.data.data as AppSecret[]).map(
+		({ fields, ...secret }) => ({ ...secret, fields: parseFields(fields) }),
+	);
 }
 
 const openSecretDrawer = () => {
