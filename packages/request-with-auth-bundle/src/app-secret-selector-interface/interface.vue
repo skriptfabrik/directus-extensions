@@ -15,10 +15,30 @@ const localValue = computed<number | null, number | null>({
 });
 
 const secretDrawerOpen = ref(false);
+const secretsLoaded = ref(false);
 const appSecrets = ref<AppSecret[]>([]);
 const selectedSecret = computed(() =>
 	appSecrets.value.find((secret) => secret.id === localValue.value),
 );
+const isDanglingReference = computed(
+	() =>
+		secretsLoaded.value && localValue.value !== null && !selectedSecret.value,
+);
+const selectItems = computed(() => {
+	const items = appSecrets.value.map((secret) => ({
+		text: `${secret.type.toUpperCase()} - ${secret.name}`,
+		value: secret.id,
+	}));
+
+	if (localValue.value !== null && isDanglingReference.value) {
+		items.push({
+			text: `Missing credential (#${localValue.value})`,
+			value: localValue.value,
+		});
+	}
+
+	return items;
+});
 const editableSecret = ref<Partial<AppSecretPayload>>();
 
 // Depending on the database driver, Directus returns a `json` column either
@@ -36,6 +56,8 @@ async function fetchSecrets() {
 	appSecrets.value = (response.data.data as AppSecret[]).map(
 		({ fields, ...secret }) => ({ ...secret, fields: parseFields(fields) }),
 	);
+
+	secretsLoaded.value = true;
 }
 
 const openSecretDrawer = () => {
@@ -76,24 +98,25 @@ onMounted(fetchSecrets);
 
 <template>
 	<div class="app-secret-interface-wrapper">
-		<VSelect
-			v-model="localValue"
-			placeholder="Select credential"
-			show-deselect
-			close-on-content-click
-			label
-			:disabled="disabled"
-			:items="
-				appSecrets.map((secret) => ({
-					text: `${secret.type.toUpperCase()} - ${secret.name}`,
-					value: secret.id,
-				}))
-			"
-		/>
-		<VButton icon :disabled="disabled" @click="openSecretDrawer">
-			<VIcon v-if="localValue" name="edit" />
-			<VIcon v-else name="add" />
-		</VButton>
+		<div class="app-secret-interface-row">
+			<VSelect
+				v-model="localValue"
+				placeholder="Select credential"
+				show-deselect
+				close-on-content-click
+				label
+				:disabled="disabled"
+				:items="selectItems"
+			/>
+			<VButton icon :disabled="disabled" @click="openSecretDrawer">
+				<VIcon v-if="selectedSecret" name="edit" />
+				<VIcon v-else name="add" />
+			</VButton>
+		</div>
+		<VNotice v-if="isDanglingReference" type="warning">
+			The selected credential no longer exists. Please select or create another
+			one.
+		</VNotice>
 		<VDrawer
 			:model-value="secretDrawerOpen"
 			persistent
@@ -119,6 +142,12 @@ onMounted(fetchSecrets);
 
 <style scoped>
 .app-secret-interface-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.app-secret-interface-row {
 	display: flex;
 	align-items: center;
 	gap: 8px;
