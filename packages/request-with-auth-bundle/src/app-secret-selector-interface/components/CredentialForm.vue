@@ -32,6 +32,7 @@ const metaFields: DeepPartial<AppField>[] = [
 		meta: {
 			width: 'full',
 			interface: 'select-dropdown',
+			required: true,
 			options: {
 				choices: [{ text: 'Basic Auth', value: 'basic' }],
 			},
@@ -47,6 +48,7 @@ const metaFields: DeepPartial<AppField>[] = [
 		meta: {
 			width: 'full',
 			interface: 'input',
+			required: true,
 			options: {
 				placeholder: 'Credential name',
 			},
@@ -62,6 +64,7 @@ const basicAuthFields: DeepPartial<AppField>[] = [
 		meta: {
 			width: 'full',
 			interface: 'input',
+			required: true,
 		},
 	},
 	{
@@ -71,6 +74,7 @@ const basicAuthFields: DeepPartial<AppField>[] = [
 		meta: {
 			width: 'full',
 			interface: 'app-secret-input',
+			required: true,
 		},
 	},
 ];
