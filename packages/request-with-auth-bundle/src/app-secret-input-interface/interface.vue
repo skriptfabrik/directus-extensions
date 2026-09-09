@@ -27,7 +27,12 @@ const localValue = computed<string | null, string | null>({
 			type="password"
 			:disabled="disabled || inputLocked"
 		/>
-		<VButton :disabled="setToEncrypt" icon @click="localValue = ''">
+		<VButton
+			v-if="inputLocked"
+			:disabled="setToEncrypt"
+			icon
+			@click="localValue = ''"
+		>
 			<VIcon name="edit" />
 		</VButton>
 	</div>
