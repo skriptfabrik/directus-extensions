@@ -1,7 +1,7 @@
 {
 	"name": "@skriptfabrik/request-with-auth-bundle",
 	"type": "module",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "This bundle adds a new interface for selecting and managing app secrets and an operation for making authenticated requests.",
 	"author": {
 		"name": "skriptfabrik",

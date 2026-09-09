@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.1.0](https://github.com/skriptfabrik/directus-extensions/compare/request-with-auth-bundle-1.0.0...request-with-auth-bundle-1.1.0) (2026-09-09)
+
 ## request-with-auth-bundle-1.0.0 (2026-02-12)
 
 ### ✨ New Features
