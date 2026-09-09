@@ -70,7 +70,20 @@ export default defineOperationApi<Options>({
 		let credential;
 
 		if (secret) {
-			credential = await itemsService.readOne(secret);
+			try {
+				credential = await itemsService.readOne(secret);
+			} catch {
+				logger.error(`Failed to load credential with id ${secret}.`);
+
+				throw new Error(
+					`Failed to load the configured credential (id: ${secret}). Please verify it still exists and that this Flow has permission to read it.`,
+				);
+			}
+
+			if (credential && typeof credential.fields === 'string') {
+				credential.fields = JSON.parse(credential.fields || '{}');
+			}
+
 			credential = await decryptSecret(credential as AppSecret);
 		}
 
