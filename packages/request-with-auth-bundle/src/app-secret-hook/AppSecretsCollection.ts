@@ -35,7 +35,12 @@ export const AppSecretsCollection: RawCollection = {
 				field: 'type',
 				special: null,
 				interface: 'select-dropdown',
-				options: [Object],
+				options: {
+					choices: [
+						{ text: 'Basic Auth', value: 'basic' },
+						{ text: 'Bearer Token', value: 'bearer' },
+					],
+				},
 				display: null,
 				display_options: null,
 				readonly: true,
