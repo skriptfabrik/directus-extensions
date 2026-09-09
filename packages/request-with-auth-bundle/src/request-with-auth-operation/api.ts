@@ -48,7 +48,7 @@ export default defineOperationApi<Options>({
 		};
 
 		const decryptSecret = async (encryptedSecret?: AppSecret) => {
-			if (!secret) return null;
+			if (!encryptedSecret) return null;
 			const decryptedSecret = { ...encryptedSecret };
 
 			if (
