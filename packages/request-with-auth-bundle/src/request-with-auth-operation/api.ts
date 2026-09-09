@@ -51,16 +51,30 @@ export default defineOperationApi<Options>({
 			if (!encryptedSecret) return null;
 			const decryptedSecret = { ...encryptedSecret };
 
-			if (
-				decryptedSecret.type === 'basic' &&
-				decryptedSecret.fields?.password
-			) {
-				decryptedSecret.fields.password = await decryptString(
-					decryptedSecret.fields?.password,
-				);
-			}
+			switch (decryptedSecret.type) {
+				case 'basic': {
+					if (decryptedSecret.fields?.password) {
+						decryptedSecret.fields.password = await decryptString(
+							decryptedSecret.fields.password,
+						);
+					}
 
-			return decryptedSecret;
+					return decryptedSecret;
+				}
+
+				case 'bearer': {
+					if (decryptedSecret.fields?.token) {
+						decryptedSecret.fields.token = await decryptString(
+							decryptedSecret.fields.token,
+						);
+					}
+
+					return decryptedSecret;
+				}
+
+				default:
+					return decryptedSecret;
+			}
 		};
 
 		const itemsService = new ItemsService('app_secrets', {
@@ -110,6 +124,8 @@ export default defineOperationApi<Options>({
 		) {
 			// eslint-disable-next-line n/prefer-global/buffer
 			customHeaders.Authorization = `Basic ${Buffer.from(`${credential.fields.user}:${credential.fields.password}`).toString('base64')}`;
+		} else if (credential?.type === 'bearer' && credential?.fields?.token) {
+			customHeaders.Authorization = `Bearer ${credential.fields.token}`;
 		}
 
 		const axios = await getAxios();

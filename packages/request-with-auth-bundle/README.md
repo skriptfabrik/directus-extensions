@@ -46,3 +46,5 @@ the extension from the Marketplace or manually.
 
 1. Upon installation, the `app_secrets` collection is automatically created, but hidden from the UI.
 2. You can add new secrets via the **Request with Auth** operation in a Flow or manually.
+3. Supported credential types: **Basic Auth** (username/password) and **Bearer Token** (API token sent as
+   `Authorization: Bearer <token>`).

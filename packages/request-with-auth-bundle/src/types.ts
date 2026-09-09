@@ -1,7 +1,7 @@
 export interface AppSecret {
 	id: number;
 	name: string;
-	type: 'basic' | 'header';
+	type: 'basic' | 'bearer';
 	fields: Record<string, string>;
 }
 
