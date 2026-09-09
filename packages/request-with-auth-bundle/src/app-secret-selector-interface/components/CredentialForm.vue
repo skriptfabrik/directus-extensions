@@ -5,22 +5,37 @@ import { watchEffect } from 'vue';
 
 const model = defineModel<Partial<AppSecretPayload>>();
 
-const setFieldToEncrypt = (field: string) => {
-	if (!model.value?.fields) return;
-	delete model.value.fields[field];
+const fieldsByType: Record<AppSecretPayload['type'], string[]> = {
+	basic: ['user', 'password'],
+	bearer: ['token'],
+};
 
-	model.value.encrypt = [
-		...(model.value.encrypt?.filter((f) => f !== field) ?? []),
-		field,
-	];
+const encryptFieldByType: Partial<Record<AppSecretPayload['type'], string>> = {
+	basic: 'password',
+	bearer: 'token',
 };
 
 watchEffect(() => {
+	if (!model.value?.type || !model.value.fields) return;
+
+	const { type, fields } = model.value;
+	const allowedFields = fieldsByType[type] ?? [];
+
+	for (const key of Object.keys(fields)) {
+		if (!allowedFields.includes(key)) delete fields[key];
+	}
+
+	const encryptableField = encryptFieldByType[type];
+	const encryptableValue = encryptableField
+		? fields[encryptableField]
+		: undefined;
+
 	if (
-		model.value?.type === 'basic' &&
-		(!model.value.fields?.password || model.value.fields.password === '')
+		encryptableField &&
+		(encryptableValue === undefined || encryptableValue === '')
 	) {
-		setFieldToEncrypt('password');
+		delete fields[encryptableField];
+		model.value.encrypt = [encryptableField];
 	}
 });
 
@@ -34,7 +49,10 @@ const metaFields: DeepPartial<AppField>[] = [
 			interface: 'select-dropdown',
 			required: true,
 			options: {
-				choices: [{ text: 'Basic Auth', value: 'basic' }],
+				choices: [
+					{ text: 'Basic Auth', value: 'basic' },
+					{ text: 'Bearer Token', value: 'bearer' },
+				],
 			},
 		},
 		schema: {
@@ -78,6 +96,19 @@ const basicAuthFields: DeepPartial<AppField>[] = [
 		},
 	},
 ];
+
+const bearerAuthFields: DeepPartial<AppField>[] = [
+	{
+		field: 'token',
+		name: 'Token',
+		type: 'string',
+		meta: {
+			width: 'full',
+			interface: 'app-secret-input',
+			required: true,
+		},
+	},
+];
 </script>
 
 <template>
@@ -96,6 +127,14 @@ const basicAuthFields: DeepPartial<AppField>[] = [
 			:fields="basicAuthFields"
 			:initial-values="model.fields"
 			primary-key="basic"
+		/>
+		<VForm
+			v-if="model?.type === 'bearer'"
+			v-model="model.fields"
+			class="extension-options"
+			:fields="bearerAuthFields"
+			:initial-values="model.fields"
+			primary-key="bearer"
 		/>
 	</div>
 </template>
