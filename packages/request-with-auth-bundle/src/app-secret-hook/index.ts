@@ -13,8 +13,7 @@ export default defineHook(({ filter, action }, context) => {
 		const { PayloadService } = services;
 		const payloadService = new PayloadService('app_secrets', {
 			schema: await getSchema(),
-			// @ts-expect-error admin is sufficient
-			accountability: { admin: true },
+			accountability: null,
 		});
 
 		const encryptData = async (value: string) => {
@@ -56,8 +55,7 @@ export default defineHook(({ filter, action }, context) => {
 		const { CollectionsService } = services;
 		const collectionsService = new CollectionsService({
 			schema: await getSchema(),
-			// @ts-expect-error admin is sufficient
-			accountability: { admin: true },
+			accountability: null,
 		});
 
 		const secretsCollection = await collectionsService
