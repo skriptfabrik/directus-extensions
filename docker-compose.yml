@@ -18,3 +18,5 @@ services:
       - CORS_ENABLED=true
       - CORS_ORIGIN=true
       - CACHE_AUTO_PURGE=true
+      - EXTENSIONS_AUTO_RELOAD=true
+      - WEBSOCKETS_ENABLED=true
