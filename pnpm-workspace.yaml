@@ -1,2 +1,7 @@
 packages:
   - packages/*
+
+patchedDependencies:
+  '@conventional-changelog/template': patches/@conventional-changelog__template.patch
+  conventional-changelog-conventionalcommits@10.3.0: patches/conventional-changelog-conventionalcommits@10.3.0.patch
+  conventional-changelog-conventionalcommits@9.3.1: patches/conventional-changelog-conventionalcommits@9.3.1.patch

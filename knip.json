@@ -9,7 +9,8 @@
 			],
 			"ignoreDependencies": [
 				"@semantic-release/changelog",
-				"@semantic-release/exec"
+				"@semantic-release/exec",
+				"conventional-changelog-conventionalcommits"
 			]
 		},
 		"packages/*": {

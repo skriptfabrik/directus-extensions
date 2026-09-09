@@ -5,9 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
-  conventional-changelog-conventionalcommits:
-    hash: f95a24c25a92f9019f2c77c60525c6d1f932ee9ac4b0a85cf198ab5bb2176ba3
-    path: patches/conventional-changelog-conventionalcommits.patch
+  '@conventional-changelog/template':
+    hash: 4f1344dd9243991e972e9f483052281984a98b597be039fd407013f1c426b6a3
+    path: patches/@conventional-changelog__template.patch
+  conventional-changelog-conventionalcommits@10.3.0:
+    hash: 7f4a13ed9034a39a8dc4d0bbcad813f6b23edf034ec561fffebaf3d22b232cbb
+    path: patches/conventional-changelog-conventionalcommits@10.3.0.patch
+  conventional-changelog-conventionalcommits@9.3.1:
+    hash: ca8428af4b242174cea0ee46385cefaec93a5973c309b53b421a4cfcf0c1c610
+    path: patches/conventional-changelog-conventionalcommits@9.3.1.patch
 
 importers:
 
@@ -23,11 +29,14 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0(@typescript-eslint/utils@8.54.0(eslint@9.39.2(jiti@2.7.0))(typescript@6.0.3))(@vue/compiler-sfc@3.5.42)(eslint@9.39.2(jiti@2.7.0))(typescript@6.0.3)
       '@semantic-release/changelog':
-        specifier: ^6.0.3
-        version: 6.0.3(semantic-release@25.0.9(typescript@6.0.3))
+        specifier: ^7.0.0
+        version: 7.0.0(semantic-release@25.0.9(typescript@6.0.3))
       '@semantic-release/exec':
         specifier: ^7.1.0
         version: 7.1.0(semantic-release@25.0.9(typescript@6.0.3))
+      conventional-changelog-conventionalcommits:
+        specifier: ^9.3.1
+        version: 9.3.1(patch_hash=ca8428af4b242174cea0ee46385cefaec93a5973c309b53b421a4cfcf0c1c610)
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.7.0)
@@ -1431,21 +1440,17 @@ packages:
   '@sec-ant/readable-stream@0.4.1':
     resolution: {integrity: sha512-831qok9r2t8AlxLko40y2ebgSDhenenCatLVeW/uBtnHPyhHOvG0C7TvfgecV+wHzIm5KUICgzmVpWS+IMEAeg==}
 
-  '@semantic-release/changelog@6.0.3':
-    resolution: {integrity: sha512-dZuR5qByyfe3Y03TpmCvAxCyTnp7r5XwtHRf/8vD9EAn4ZWbavUX8adMtXYzE86EVh0gyLA7lm5yW4IV30XUag==}
-    engines: {node: '>=14.17'}
+  '@semantic-release/changelog@7.0.0':
+    resolution: {integrity: sha512-TNPyag5db24o7jWjre7UwKB4EcL8oJxbRhnDQ7hmZRAYqzreAc6PgdxQuU3pppp5xQinYtiumL0iG8SSKvnlzg==}
+    engines: {node: ^22.22.2 || >=24.15}
     peerDependencies:
-      semantic-release: '>=18.0.0'
+      semantic-release: '>=20.1.0'
 
   '@semantic-release/commit-analyzer@13.0.1':
     resolution: {integrity: sha512-wdnBPHKkr9HhNhXOhZD5a2LNl91+hs8CC2vsAVYxtZH3y0dV3wKn+uZSN61rdJQZ8EGxzWB3inWocBHV9+u/CQ==}
     engines: {node: '>=20.8.1'}
     peerDependencies:
       semantic-release: '>=20.1.0'
-
-  '@semantic-release/error@3.0.0':
-    resolution: {integrity: sha512-5hiM4Un+tpl4cKw3lV4UgzJj+SmfNIDCLLw0TepzQxz9ZGV5ixnqkzIVF+3tp0ZHgcMKE+VNGHJjEeyFG2dcSw==}
-    engines: {node: '>=14.17'}
 
   '@semantic-release/error@4.0.0':
     resolution: {integrity: sha512-mgdxrHTLOjOddRVYIYDo0fR3/v61GNN1YGkfbrjuIKg/uMgCd+Qzo3UAXJ+woLQQpos4pl5Esuw5A7AoNlzjUQ==}
@@ -2122,6 +2127,10 @@ packages:
   conventional-changelog-conventionalcommits@10.3.0:
     resolution: {integrity: sha512-qag0zFD867Qq1DK0jAWicyWlEMS1FFC/BLVLISaoeI7Y6Em6aWchk7BCkhOTsecRpMsV6qX41XmlNnghiiTmSw==}
     engines: {node: '>=22'}
+
+  conventional-changelog-conventionalcommits@9.3.1:
+    resolution: {integrity: sha512-dTYtpIacRpcZgrvBYvBfArMmK2xvIpv2TaxM0/ZI5CBtNUzvF2x0t15HsbRABWprS6UPmvj+PzHVjSx4qAVKyw==}
+    engines: {node: '>=18'}
 
   conventional-changelog-writer@8.4.0:
     resolution: {integrity: sha512-HHBFkk1EECxxmCi4CTu091iuDpQv5/OavuCUAuZmrkWpmYfyD816nom1CvtfXJ/uYfAAjavgHvXHX291tSLK8g==}
@@ -4960,7 +4969,7 @@ snapshots:
   '@commitlint/config-conventional@21.2.2':
     dependencies:
       '@commitlint/types': 21.2.0
-      conventional-changelog-conventionalcommits: 10.3.0(patch_hash=f95a24c25a92f9019f2c77c60525c6d1f932ee9ac4b0a85cf198ab5bb2176ba3)
+      conventional-changelog-conventionalcommits: 10.3.0(patch_hash=7f4a13ed9034a39a8dc4d0bbcad813f6b23edf034ec561fffebaf3d22b232cbb)
 
   '@commitlint/config-validator@21.2.0':
     dependencies:
@@ -5058,7 +5067,7 @@ snapshots:
     optionalDependencies:
       conventional-commits-parser: 7.1.2
 
-  '@conventional-changelog/template@1.3.0': {}
+  '@conventional-changelog/template@1.3.0(patch_hash=4f1344dd9243991e972e9f483052281984a98b597be039fd407013f1c426b6a3)': {}
 
   '@directus/ai@1.3.2': {}
 
@@ -6299,12 +6308,11 @@ snapshots:
 
   '@sec-ant/readable-stream@0.4.1': {}
 
-  '@semantic-release/changelog@6.0.3(semantic-release@25.0.9(typescript@6.0.3))':
+  '@semantic-release/changelog@7.0.0(semantic-release@25.0.9(typescript@6.0.3))':
     dependencies:
-      '@semantic-release/error': 3.0.0
-      aggregate-error: 3.1.0
-      fs-extra: 11.3.2
-      lodash: 4.17.23
+      '@semantic-release/error': 4.0.0
+      aggregate-error: 5.0.0
+      lodash-es: 4.18.1
       semantic-release: 25.0.9(typescript@6.0.3)
 
   '@semantic-release/commit-analyzer@13.0.1(semantic-release@25.0.9(typescript@6.0.3))':
@@ -6320,8 +6328,6 @@ snapshots:
       semantic-release: 25.0.9(typescript@6.0.3)
     transitivePeerDependencies:
       - supports-color
-
-  '@semantic-release/error@3.0.0': {}
 
   '@semantic-release/error@4.0.0': {}
 
@@ -7116,11 +7122,15 @@ snapshots:
 
   conventional-changelog-angular@9.3.0:
     dependencies:
-      '@conventional-changelog/template': 1.3.0
+      '@conventional-changelog/template': 1.3.0(patch_hash=4f1344dd9243991e972e9f483052281984a98b597be039fd407013f1c426b6a3)
 
-  conventional-changelog-conventionalcommits@10.3.0(patch_hash=f95a24c25a92f9019f2c77c60525c6d1f932ee9ac4b0a85cf198ab5bb2176ba3):
+  conventional-changelog-conventionalcommits@10.3.0(patch_hash=7f4a13ed9034a39a8dc4d0bbcad813f6b23edf034ec561fffebaf3d22b232cbb):
     dependencies:
-      '@conventional-changelog/template': 1.3.0
+      '@conventional-changelog/template': 1.3.0(patch_hash=4f1344dd9243991e972e9f483052281984a98b597be039fd407013f1c426b6a3)
+
+  conventional-changelog-conventionalcommits@9.3.1(patch_hash=ca8428af4b242174cea0ee46385cefaec93a5973c309b53b421a4cfcf0c1c610):
+    dependencies:
+      compare-func: 2.0.0
 
   conventional-changelog-writer@8.4.0:
     dependencies:
