@@ -71,7 +71,7 @@
 	"devDependencies": {
 		"@directus/extensions-sdk": "18.0.6",
 		"@directus/types": "^16.2.0",
-		"@directus/utils": "^13.5.5",
+		"@directus/utils": "^14.0.0",
 		"@types/node": "^24.13.5",
 		"axios": "^1.20.0",
 		"encodeurl": "^2.0.0",
