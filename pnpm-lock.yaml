@@ -68,8 +68,8 @@ importers:
         specifier: 18.1.0
         version: 18.1.0(@types/node@24.19.2)(@unhead/vue@3.4.1(@oxc-project/types@0.154.0)(esbuild@0.28.1)(lightningcss@1.33.0)(oxc-parser@0.154.0)(rolldown@1.1.5)(rollup@4.59.0)(vite@8.1.6(@types/node@24.19.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))(vue@3.5.44(typescript@6.0.3)))(jiti@2.7.0)(knex@3.1.0)(pinia@2.3.1(typescript@6.0.3)(vue@3.5.44(typescript@6.0.3)))(terser@5.51.2)(typescript@6.0.3)(yaml@2.9.1)
       '@directus/types':
-        specifier: ^16.2.0
-        version: 16.2.0(knex@3.1.0)(vue@3.5.44(typescript@6.0.3))
+        specifier: ^18.1.0
+        version: 18.1.0(knex@3.1.0)(vue@3.5.44(typescript@6.0.3))
       '@directus/utils':
         specifier: ^14.0.1
         version: 14.0.1(vue@3.5.44(typescript@6.0.3))
@@ -95,8 +95,8 @@ importers:
         specifier: 18.1.0
         version: 18.1.0(@types/node@25.2.3)(@unhead/vue@3.4.1(@oxc-project/types@0.154.0)(esbuild@0.28.1)(lightningcss@1.33.0)(oxc-parser@0.154.0)(rolldown@1.1.5)(rollup@4.59.0)(vite@8.1.6(@types/node@25.2.3)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))(vue@3.5.44(typescript@6.0.3)))(jiti@2.7.0)(knex@3.1.0)(pinia@2.3.1(typescript@6.0.3)(vue@3.5.44(typescript@6.0.3)))(terser@5.51.2)(typescript@6.0.3)(yaml@2.9.1)
       '@directus/types':
-        specifier: ^16.2.0
-        version: 16.2.0(knex@3.1.0)(vue@3.5.44(typescript@6.0.3))
+        specifier: ^18.1.0
+        version: 18.1.0(knex@3.1.0)(vue@3.5.44(typescript@6.0.3))
       typescript:
         specifier: ^6.0.3
         version: 6.0.3
@@ -260,9 +260,6 @@ packages:
     resolution: {integrity: sha512-aalGyl7dbB5PArRebDIX43ZvBlXrYm9uWzGJ26t+4SzJVPsOuvfILGGbw5X4yX7i50YEmJ8zvbiWnqH/AAnZqg==}
     engines: {node: '>=22'}
 
-  '@directus/ai@1.3.2':
-    resolution: {integrity: sha512-HUCU24/MGcUP25T1O72IQM21vUqsA4/SjG83CmdpVfz9MJJGfq61qdi0ImLFMNsYSKE10lHhGwlRGsE+NejKUA==}
-
   '@directus/ai@1.4.0':
     resolution: {integrity: sha512-6TL2gusLneRlT06N3AM5r/E8sZ2xdNpb0updDkBAvXIm2eXwD9Bb092b/nkdS7uNe7yPde0/mpykQHDwCrIBDA==}
 
@@ -270,9 +267,6 @@ packages:
     resolution: {integrity: sha512-4e8o+xKweJPR2hxBcOtx9W7IYrTyfZ7ppuLCz6iyuhRZ9Wjq00MGBXhFE0X8Vr6Pzc3582tvE8/yLax+XD2zww==}
     peerDependencies:
       vue: 3.5.43
-
-  '@directus/constants@14.4.1':
-    resolution: {integrity: sha512-6M/Pmy78IbtL3Ev2dmn5UJArhyGetl1i0GxnpAfla7/0oRn9xrUmxvGHNQJdiVoG54T9Lio6KP5zFF8b/8Iz2Q==}
 
   '@directus/constants@14.6.0':
     resolution: {integrity: sha512-plPVeLa/ZBPncS61vwzxJ64v6jN5vEaQqC+pFcQCbu9rLKbsGzJ5WxrVVmDI9ieoGXN+7Bc1QIzi8oXKH6R6Qw==}
@@ -320,44 +314,6 @@ packages:
       '@unhead/vue': 3.4.1
       pinia: 2.3.1
       vue: 3.5.43
-
-  '@directus/types@16.2.0':
-    resolution: {integrity: sha512-BWkO6QqGvrLy4vKfOfCSEIACNJH4BWjb5OZykjNvWRjumAcyEsX//dYNRw4buv/oBiiD7AXQ/9KxXM1BK4FU5A==}
-    peerDependencies:
-      deep-diff: 1.0.2
-      express: 4.22.2
-      graphql: 16.12.0
-      knex: 3.1.0
-      nodemailer: 9.0.3
-      openapi3-ts: 4.5.0
-      pino: 9.7.0
-      sharp: 0.35.3
-      vue: 3.5.24
-      vue-router: 4.6.3
-      ws: 8.21.0
-    peerDependenciesMeta:
-      deep-diff:
-        optional: true
-      express:
-        optional: true
-      graphql:
-        optional: true
-      knex:
-        optional: true
-      nodemailer:
-        optional: true
-      openapi3-ts:
-        optional: true
-      pino:
-        optional: true
-      sharp:
-        optional: true
-      vue:
-        optional: true
-      vue-router:
-        optional: true
-      ws:
-        optional: true
 
   '@directus/types@18.1.0':
     resolution: {integrity: sha512-kjk2ygDChV6vgcyz4m0aHaAgeZFF6roax0dnEqasISgdd8vYHX5RdqWJbUFsItjpCiKk/Gbhq+RdW16nLxKOLA==}
@@ -3083,10 +3039,6 @@ packages:
     resolution: {integrity: sha512-rWP3AMAalQSesXO8gleROyL2iKU73SX5Er66losQn9rWOWL4Gef0a/xOEOVqjWGMuR2vHG3FJ8UUmT700O8oFg==}
     engines: {node: '>=18.20'}
 
-  is-core-module@2.16.2:
-    resolution: {integrity: sha512-evOr8xfXKxE6qSR0hSXL2r3sd7ALj8+7jQEUvPYcm5sgZFdJ+AYzT6yNmJenvIYQBgIGwfwz08sL8zoL7yq2BA==}
-    engines: {node: '>= 0.4'}
-
   is-core-module@2.17.0:
     resolution: {integrity: sha512-J/vG0zBCbIKOQFfufSwyXdMrsohyJIUNkrnmo6WZGzoM7tr/lsbfW5b2BvisL6zsyMzK9UxV9L6c7AoFbyXHOA==}
     engines: {node: '>= 0.4'}
@@ -5035,9 +4987,6 @@ packages:
     resolution: {integrity: sha512-xYqdZFUK/VYazNl/oCDYN+3WloWQwMfZxBoiNt6qNyk+xfOdi598muWE42rNZFp1kNOiqW936q5RhUdnpqElSg==}
     engines: {node: '>=18'}
 
-  zod@4.1.12:
-    resolution: {integrity: sha512-JInaHOamG8pt5+Ey8kGmdcAcg3OL9reK8ltczgHTAwNhMys/6ThXHityHxVV2p3fkw/c+MAvBHFVYHFZDmjMCQ==}
-
   zod@4.6.7:
     resolution: {integrity: sha512-g8W2D2kU6a8untc053fX1uVBKzM7yqAxW/3zwk83+6RyF2+SKOuV+c0wBDhUwzV1PaGapmZH+rmcUzPf+3CGwg==}
 
@@ -5232,8 +5181,6 @@ snapshots:
 
   '@conventional-changelog/template@1.4.0(patch_hash=4f1344dd9243991e972e9f483052281984a98b597be039fd407013f1c426b6a3)': {}
 
-  '@directus/ai@1.3.2': {}
-
   '@directus/ai@1.4.0': {}
 
   '@directus/composables@11.7.0(vue@3.5.43(typescript@6.0.3))':
@@ -5248,8 +5195,6 @@ snapshots:
     transitivePeerDependencies:
       - debug
       - supports-color
-
-  '@directus/constants@14.4.1': {}
 
   '@directus/constants@14.6.0': {}
 
@@ -5490,30 +5435,6 @@ snapshots:
       vue: 3.5.43(typescript@6.0.3)
       zod: 4.6.7
 
-  '@directus/types@16.2.0(knex@3.1.0)(vue@3.5.44(typescript@6.0.3))':
-    dependencies:
-      '@directus/ai': 1.3.2
-      '@directus/constants': 14.4.1
-      '@directus/schema': 14.0.2
-      '@types/archiver': 8.0.0
-      '@types/express': 4.17.21
-      '@types/geojson': 7946.0.16
-      '@types/nodemailer': 8.0.1
-      '@types/ws': 8.18.1
-      zod: 4.1.12
-    optionalDependencies:
-      knex: 3.1.0
-      vue: 3.5.44(typescript@6.0.3)
-    transitivePeerDependencies:
-      - better-sqlite3
-      - mysql
-      - mysql2
-      - pg
-      - pg-native
-      - sqlite3
-      - supports-color
-      - tedious
-
   '@directus/types@18.1.0(knex@3.1.0)(vue@3.5.43(typescript@6.0.3))':
     dependencies:
       '@directus/ai': 1.4.0
@@ -5528,6 +5449,30 @@ snapshots:
     optionalDependencies:
       knex: 3.1.0
       vue: 3.5.43(typescript@6.0.3)
+    transitivePeerDependencies:
+      - better-sqlite3
+      - mysql
+      - mysql2
+      - pg
+      - pg-native
+      - sqlite3
+      - supports-color
+      - tedious
+
+  '@directus/types@18.1.0(knex@3.1.0)(vue@3.5.44(typescript@6.0.3))':
+    dependencies:
+      '@directus/ai': 1.4.0
+      '@directus/constants': 14.6.0
+      '@directus/schema': 14.0.2
+      '@types/archiver': 8.0.0
+      '@types/express': 4.17.21
+      '@types/geojson': 7946.0.16
+      '@types/nodemailer': 8.0.1
+      '@types/ws': 8.18.1
+      zod: 4.6.7
+    optionalDependencies:
+      knex: 3.1.0
+      vue: 3.5.44(typescript@6.0.3)
     transitivePeerDependencies:
       - better-sqlite3
       - mysql
@@ -7716,7 +7661,7 @@ snapshots:
   eslint-import-resolver-node@0.3.9:
     dependencies:
       debug: 3.2.7
-      is-core-module: 2.16.2
+      is-core-module: 2.17.0
       resolve: 1.22.13
     transitivePeerDependencies:
       - supports-color
@@ -8367,10 +8312,6 @@ snapshots:
   is-builtin-module@4.0.0:
     dependencies:
       builtin-modules: 4.0.0
-
-  is-core-module@2.16.2:
-    dependencies:
-      hasown: 2.0.4
 
   is-core-module@2.17.0:
     dependencies:
@@ -10408,8 +10349,6 @@ snapshots:
   yoctocolors-cjs@2.1.3: {}
 
   yoctocolors@2.2.0: {}
-
-  zod@4.1.12: {}
 
   zod@4.6.7: {}
 
