@@ -71,8 +71,8 @@ importers:
         specifier: ^16.2.0
         version: 16.2.0(knex@3.1.0)(vue@3.5.44(typescript@6.0.3))
       '@directus/utils':
-        specifier: ^14.0.0
-        version: 14.0.0(vue@3.5.44(typescript@6.0.3))
+        specifier: ^14.0.1
+        version: 14.0.1(vue@3.5.44(typescript@6.0.3))
       '@types/node':
         specifier: ^24.19.2
         version: 24.19.2
@@ -274,9 +274,6 @@ packages:
   '@directus/constants@14.4.1':
     resolution: {integrity: sha512-6M/Pmy78IbtL3Ev2dmn5UJArhyGetl1i0GxnpAfla7/0oRn9xrUmxvGHNQJdiVoG54T9Lio6KP5zFF8b/8Iz2Q==}
 
-  '@directus/constants@14.5.0':
-    resolution: {integrity: sha512-w3frueO0uJR3PGMOCTn42uQWXeDbNZwDtdFJfGyivFB+Vy0subV7hDT+mdu2zmAeYJUYC3vIVD0cxuQfLnmiuA==}
-
   '@directus/constants@14.6.0':
     resolution: {integrity: sha512-plPVeLa/ZBPncS61vwzxJ64v6jN5vEaQqC+pFcQCbu9rLKbsGzJ5WxrVVmDI9ieoGXN+7Bc1QIzi8oXKH6R6Qw==}
 
@@ -313,9 +310,6 @@ packages:
 
   '@directus/schema@14.0.2':
     resolution: {integrity: sha512-qHAtkAejvcPQCWaRpU9HqJs7Jm4gtxPujT2eB4L+RnTy8ESGjR0C4WvPbUWiXLjaWJbaWB0avFE0Dptzvz7Uzw==}
-
-  '@directus/system-data@4.8.0':
-    resolution: {integrity: sha512-h09oWakUGMSGSmkVh5PESD9pNcOQvt2HhovCh0CtVv9380p+d8ak4O4BKdXg8lSXm8pz9EI3NrTJEgMx+Tf2mQ==}
 
   '@directus/system-data@4.9.0':
     resolution: {integrity: sha512-c2+9v5YyPEb76b+vs1OxTJX1HP9OBt48q6v/ybeQHVzLuLqt5wD61bsV/kpqyPyzQP2RX6KSnpARq4NYJ4I1Zg==}
@@ -401,14 +395,6 @@ packages:
       vue-router:
         optional: true
       ws:
-        optional: true
-
-  '@directus/utils@14.0.0':
-    resolution: {integrity: sha512-CK9hTU+OeNS9Hy5FqIcn0D84MmwD0e8aU8BLIVcvxlLelOAtz/V2LrJvCkSxXThs5cFcjAaMzsWsmjQE8vlKrg==}
-    peerDependencies:
-      vue: 3.5.43
-    peerDependenciesMeta:
-      vue:
         optional: true
 
   '@directus/utils@14.0.1':
@@ -1975,8 +1961,8 @@ packages:
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
 
-  argparse@3.0.3:
-    resolution: {integrity: sha512-Sn98ftV3KfsO8xfLPHG6oT8y+b0yvbrLgZjgPDXsharNY15tTAjqIsIju4S32nl6/iEUNNE4v+yL2Zhm8ooP3w==}
+  argparse@3.0.4:
+    resolution: {integrity: sha512-fwWK3Zq22l4XJJjx5mcBHGikIk+hJqO+32dPm0Jur7+rtG5x1scOjSfdT9ZKeWHPpsya/l0HHK4tDImBkTrtvA==}
 
   argue-cli@3.1.0:
     resolution: {integrity: sha512-DhBpBfXL4SS2uC0N922MMajKR3CdrTG0u2or1PNYgXMsrSzViJrbtvT0nCLlLGUI0plam/ZZCs7aAauHtW9thw==}
@@ -5262,8 +5248,6 @@ snapshots:
 
   '@directus/constants@14.4.1': {}
 
-  '@directus/constants@14.5.0': {}
-
   '@directus/constants@14.6.0': {}
 
   '@directus/eslint-config@0.1.0(@typescript-eslint/utils@8.54.0(eslint@9.39.2(jiti@2.7.0))(typescript@6.0.3))(@vue/compiler-sfc@3.5.44)(eslint@9.39.2(jiti@2.7.0))(typescript@6.0.3)':
@@ -5479,8 +5463,6 @@ snapshots:
       - supports-color
       - tedious
 
-  '@directus/system-data@4.8.0': {}
-
   '@directus/system-data@4.9.0': {}
 
   '@directus/themes@3.0.2(@unhead/vue@3.4.1(@oxc-project/types@0.154.0)(esbuild@0.28.1)(lightningcss@1.33.0)(oxc-parser@0.154.0)(rolldown@1.1.5)(rollup@4.59.0)(vite@8.1.6(@types/node@24.19.2)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))(vue@3.5.44(typescript@6.0.3)))(pinia@2.3.1(typescript@6.0.3)(vue@3.5.44(typescript@6.0.3)))(vue@3.5.43(typescript@6.0.3))':
@@ -5553,20 +5535,6 @@ snapshots:
       - supports-color
       - tedious
 
-  '@directus/utils@14.0.0(vue@3.5.44(typescript@6.0.3))':
-    dependencies:
-      '@directus/constants': 14.5.0
-      '@directus/system-data': 4.8.0
-      date-fns: 4.1.0
-      fs-extra: 11.3.2
-      ipaddr.js: 2.4.0
-      joi: 18.2.9
-      js-yaml: 4.3.2
-      lodash-es: 4.18.1
-      micromustache: 8.0.3
-    optionalDependencies:
-      vue: 3.5.44(typescript@6.0.3)
-
   '@directus/utils@14.0.1(vue@3.5.43(typescript@6.0.3))':
     dependencies:
       '@directus/constants': 14.6.0
@@ -5580,6 +5548,20 @@ snapshots:
       micromustache: 8.0.3
     optionalDependencies:
       vue: 3.5.43(typescript@6.0.3)
+
+  '@directus/utils@14.0.1(vue@3.5.44(typescript@6.0.3))':
+    dependencies:
+      '@directus/constants': 14.6.0
+      '@directus/system-data': 4.9.0
+      date-fns: 4.1.0
+      fs-extra: 11.3.2
+      ipaddr.js: 2.4.0
+      joi: 18.2.9
+      js-yaml: 4.3.2
+      lodash-es: 4.18.1
+      micromustache: 8.0.3
+    optionalDependencies:
+      vue: 3.5.44(typescript@6.0.3)
 
   '@dprint/formatter@0.4.1': {}
 
@@ -7158,7 +7140,7 @@ snapshots:
 
   argparse@2.0.1: {}
 
-  argparse@3.0.3: {}
+  argparse@3.0.4: {}
 
   argue-cli@3.1.0: {}
 
@@ -8663,7 +8645,7 @@ snapshots:
 
   markdown-it@15.0.3:
     dependencies:
-      argparse: 3.0.3
+      argparse: 3.0.4
       entities: 8.1.0
       linkify-it: 6.1.0
       mdurl: 2.1.0
