@@ -71,8 +71,8 @@ importers:
         specifier: ^18.1.0
         version: 18.1.0(knex@3.1.0)(vue@3.5.45(typescript@6.0.3))
       '@directus/utils':
-        specifier: ^14.0.1
-        version: 14.0.1(vue@3.5.45(typescript@6.0.3))
+        specifier: ^14.1.0
+        version: 14.1.0(vue@3.5.45(typescript@6.0.3))
       '@types/node':
         specifier: ^24.19.2
         version: 24.19.2
@@ -342,6 +342,14 @@ packages:
 
   '@directus/utils@14.0.1':
     resolution: {integrity: sha512-+RWEm/tTKOXEN1uM4XTw1n3kpD0xh2Q+m88/W/xxc2tTeGlLqCpemnhxx0+3Gt77SWbQkPCZWHG1Bml5mA/mrg==}
+    peerDependencies:
+      vue: 3.5.43
+    peerDependenciesMeta:
+      vue:
+        optional: true
+
+  '@directus/utils@14.1.0':
+    resolution: {integrity: sha512-CO4Y2LvR6MhG1OAr61/whrIrc5aZ8Rgr39p6ROmWDyrFJMxemKFWwT8ziRvlv4ePwgQyEGyr0GyouBXm3+Tseg==}
     peerDependencies:
       vue: 3.5.43
     peerDependenciesMeta:
@@ -3105,6 +3113,10 @@ packages:
     resolution: {integrity: sha512-2mD929bUVKUhOLQQEVhlf6EZ0Mlo0DeRb5MO7cViR9AXLtBauuccEtB1py9Ocxpo/P7ucnh442iY/iOwrh3IQw==}
     engines: {node: '>= 20'}
 
+  joi@18.3.1:
+    resolution: {integrity: sha512-mV9M4Llh4va3NT90p7KBtQhoZqjs8xLX7EWYE4y/GG3yLF6REbIBEHSUb0UX1JXRht2w5tiLSsvmpYc5akiqIw==}
+    engines: {node: '>= 20'}
+
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -5465,14 +5477,14 @@ snapshots:
     optionalDependencies:
       vue: 3.5.43(typescript@6.0.3)
 
-  '@directus/utils@14.0.1(vue@3.5.45(typescript@6.0.3))':
+  '@directus/utils@14.1.0(vue@3.5.45(typescript@6.0.3))':
     dependencies:
       '@directus/constants': 14.6.0
       '@directus/system-data': 4.9.0
       date-fns: 4.1.0
       fs-extra: 11.3.2
       ipaddr.js: 2.4.0
-      joi: 18.2.9
+      joi: 18.3.1
       js-yaml: 4.3.2
       lodash-es: 4.18.1
       micromustache: 8.0.3
@@ -8338,6 +8350,16 @@ snapshots:
   jiti@2.7.0: {}
 
   joi@18.2.9:
+    dependencies:
+      '@hapi/address': 5.1.1
+      '@hapi/formula': 3.0.2
+      '@hapi/hoek': 11.0.7
+      '@hapi/pinpoint': 2.0.1
+      '@hapi/tlds': 1.1.7
+      '@hapi/topo': 6.0.2
+      '@standard-schema/spec': 1.1.0
+
+  joi@18.3.1:
     dependencies:
       '@hapi/address': 5.1.1
       '@hapi/formula': 3.0.2
