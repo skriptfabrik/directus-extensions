@@ -2,7 +2,7 @@ import type { AppSecret } from '../types';
 import { defineOperationApi } from '@directus/extensions-sdk';
 import { isValidJSON } from '@directus/utils';
 import { isAxiosError } from 'axios';
-import encodeUrl from 'encodeurl';
+import { encodeUrl } from 'encodeurl';
 import { getAxios } from '../utils/request';
 
 interface Options {
