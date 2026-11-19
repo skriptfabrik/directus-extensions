@@ -1,13 +1,28 @@
 {
-	"$schema": "https://www.schemastore.org/prettierrc.json",
-	"singleQuote": true,
-	"quoteProps": "consistent",
-	"overrides": [
-		{
-			"files": ["**/*.jsonc"],
-			"options": {
-				"trailingComma": "none"
-			}
-		}
-	]
+  "$schema": "https://www.schemastore.org/prettierrc.json",
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "singleQuote": true,
+  "importOrder": [
+    "<THIRD_PARTY_TS_TYPES>",
+    "<TS_TYPES>^[./]",
+    "<BUILTIN_MODULES>",
+    "<THIRD_PARTY_MODULES>",
+    "^[./]"
+  ],
+  "importOrderCaseInsensitive": true,
+  "importOrderSortSpecifiers": true,
+  "overrides": [
+    {
+      "files": ["**/*.jsonc"],
+      "options": {
+        "trailingComma": "none"
+      }
+    },
+    {
+      "files": ["**/*.css", "**/*.vue"],
+      "options": {
+        "useTabs": true
+      }
+    }
+  ]
 }

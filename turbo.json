@@ -1,19 +1,19 @@
 {
-	"$schema": "https://turbo.build/schema.json",
-	"ui": "tui",
-	"tasks": {
-		"build": {
-			"outputs": ["dist/**"]
-		},
-		"dev": {
-			"cache": false,
-			"persistent": true
-		},
-		"link": {
-			"inputs": ["dist/**"]
-		},
-		"validate": {
-			"inputs": ["**/*.{js,ts}"]
-		}
-	}
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "outputs": ["dist/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "link": {
+      "inputs": ["dist/**"]
+    },
+    "validate": {
+      "inputs": ["**/*.{js,ts}"]
+    }
+  }
 }
