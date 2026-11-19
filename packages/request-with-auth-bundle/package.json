@@ -1,84 +1,84 @@
 {
-	"name": "@skriptfabrik/request-with-auth-bundle",
-	"type": "module",
-	"version": "1.1.0",
-	"description": "This bundle adds a new interface for selecting and managing app secrets and an operation for making authenticated requests.",
-	"author": {
-		"name": "skriptfabrik",
-		"email": "info@skriptfabrik.com"
-	},
-	"contributors": [
-		{
-			"name": "Paul Spenke",
-			"email": "paul@spenke-nordic.com"
-		}
-	],
-	"license": "MIT",
-	"homepage": "https://github.com/skriptfabrik/directus-extensions/blob/main/packages/request-with-auth-bundle",
-	"repository": "skriptfabrik/directus-extensions.git",
-	"bugs": "https://github.com/skriptfabrik/directus-extensions/issues",
-	"keywords": [
-		"directus",
-		"directus-extension",
-		"directus-extension-bundle"
-	],
-	"icon": "shield_lock",
-	"files": [
-		"CHANGELOG.md",
-		"dist"
-	],
-	"directus:extension": {
-		"type": "bundle",
-		"path": {
-			"app": "dist/app.js",
-			"api": "dist/api.js"
-		},
-		"entries": [
-			{
-				"type": "hook",
-				"name": "app-secret-hook",
-				"source": "src/app-secret-hook/index.ts"
-			},
-			{
-				"type": "operation",
-				"name": "request-with-auth-operation",
-				"source": {
-					"app": "src/request-with-auth-operation/app.ts",
-					"api": "src/request-with-auth-operation/api.ts"
-				}
-			},
-			{
-				"type": "interface",
-				"name": "app-secret-selector-interface",
-				"source": "src/app-secret-selector-interface/index.ts"
-			},
-			{
-				"type": "interface",
-				"name": "app-secret-input-interface",
-				"source": "src/app-secret-input-interface/index.ts"
-			}
-		],
-		"host": "^11.0.0"
-	},
-	"scripts": {
-		"add": "directus-extension add",
-		"build": "directus-extension build",
-		"dev": "directus-extension build -w --no-minify",
-		"link": "directus-extension link",
-		"release": "semantic-release",
-		"validate": "directus-extension validate"
-	},
-	"devDependencies": {
-		"@directus/extensions-sdk": "18.1.1",
-		"@directus/types": "^18.1.0",
-		"@directus/utils": "^14.1.0",
-		"@types/node": "^24.19.2",
-		"axios": "^1.21.1",
-		"encodeurl": "^3.0.0",
-		"typescript": "^6.0.3",
-		"vue": "^3.5.45"
-	},
-	"publishConfig": {
-		"access": "public"
-	}
+  "name": "@skriptfabrik/request-with-auth-bundle",
+  "type": "module",
+  "version": "1.1.0",
+  "description": "This bundle adds a new interface for selecting and managing app secrets and an operation for making authenticated requests.",
+  "author": {
+    "name": "skriptfabrik",
+    "email": "info@skriptfabrik.com"
+  },
+  "contributors": [
+    {
+      "name": "Paul Spenke",
+      "email": "paul@spenke-nordic.com"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/skriptfabrik/directus-extensions/blob/main/packages/request-with-auth-bundle",
+  "repository": "skriptfabrik/directus-extensions.git",
+  "bugs": "https://github.com/skriptfabrik/directus-extensions/issues",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-extension-bundle"
+  ],
+  "files": [
+    "CHANGELOG.md",
+    "dist"
+  ],
+  "scripts": {
+    "add": "directus-extension add",
+    "build": "directus-extension build",
+    "dev": "directus-extension build -w --no-minify",
+    "link": "directus-extension link",
+    "release": "semantic-release",
+    "validate": "directus-extension validate"
+  },
+  "devDependencies": {
+    "@directus/extensions-sdk": "18.1.1",
+    "@directus/types": "^18.1.0",
+    "@directus/utils": "^14.1.0",
+    "@types/node": "^24.19.2",
+    "axios": "^1.21.1",
+    "encodeurl": "^3.0.0",
+    "typescript": "^6.0.3",
+    "vue": "^3.5.45"
+  },
+  "directus:extension": {
+    "type": "bundle",
+    "path": {
+      "app": "dist/app.js",
+      "api": "dist/api.js"
+    },
+    "entries": [
+      {
+        "type": "hook",
+        "name": "app-secret-hook",
+        "source": "src/app-secret-hook/index.ts"
+      },
+      {
+        "type": "operation",
+        "name": "request-with-auth-operation",
+        "source": {
+          "app": "src/request-with-auth-operation/app.ts",
+          "api": "src/request-with-auth-operation/api.ts"
+        }
+      },
+      {
+        "type": "interface",
+        "name": "app-secret-selector-interface",
+        "source": "src/app-secret-selector-interface/index.ts"
+      },
+      {
+        "type": "interface",
+        "name": "app-secret-input-interface",
+        "source": "src/app-secret-input-interface/index.ts"
+      }
+    ],
+    "host": "^11.0.0"
+  },
+  "icon": "shield_lock",
+  "publishConfig": {
+    "access": "public"
+  }
 }

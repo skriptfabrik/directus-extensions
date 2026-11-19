@@ -1,52 +1,52 @@
 {
-	"name": "@skriptfabrik/variable-with-button-panel",
-	"type": "module",
-	"version": "1.0.2",
-	"description": "Extends the global variable panel with a button to save the variable.",
-	"author": {
-		"name": "skriptfabrik",
-		"email": "info@skriptfabrik.com"
-	},
-	"contributors": [
-		{
-			"name": "Paul Spenke",
-			"email": "paul@spenke-nordic.com"
-		}
-	],
-	"license": "MIT",
-	"homepage": "https://github.com/skriptfabrik/directus-extensions/blob/main/packages/variable-with-button-panel",
-	"repository": "skriptfabrik/directus-extensions.git",
-	"bugs": "https://github.com/skriptfabrik/directus-extensions/issues",
-	"keywords": [
-		"directus",
-		"directus-extension",
-		"directus-extension-panel"
-	],
-	"icon": "extension",
-	"files": [
-		"CHANGELOG.md",
-		"dist"
-	],
-	"directus:extension": {
-		"type": "panel",
-		"path": "dist/index.js",
-		"source": "src/index.ts",
-		"host": "^10.10.0"
-	},
-	"scripts": {
-		"build": "directus-extension build",
-		"dev": "directus-extension build -w --no-minify",
-		"link": "directus-extension link",
-		"release": "semantic-release",
-		"validate": "directus-extension validate"
-	},
-	"devDependencies": {
-		"@directus/extensions-sdk": "18.1.1",
-		"@directus/types": "^18.1.0",
-		"typescript": "^6.0.3",
-		"vue": "^3.5.45"
-	},
-	"publishConfig": {
-		"access": "public"
-	}
+  "name": "@skriptfabrik/variable-with-button-panel",
+  "type": "module",
+  "version": "1.0.2",
+  "description": "Extends the global variable panel with a button to save the variable.",
+  "author": {
+    "name": "skriptfabrik",
+    "email": "info@skriptfabrik.com"
+  },
+  "contributors": [
+    {
+      "name": "Paul Spenke",
+      "email": "paul@spenke-nordic.com"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/skriptfabrik/directus-extensions/blob/main/packages/variable-with-button-panel",
+  "repository": "skriptfabrik/directus-extensions.git",
+  "bugs": "https://github.com/skriptfabrik/directus-extensions/issues",
+  "keywords": [
+    "directus",
+    "directus-extension",
+    "directus-extension-panel"
+  ],
+  "files": [
+    "CHANGELOG.md",
+    "dist"
+  ],
+  "scripts": {
+    "build": "directus-extension build",
+    "dev": "directus-extension build -w --no-minify",
+    "link": "directus-extension link",
+    "release": "semantic-release",
+    "validate": "directus-extension validate"
+  },
+  "devDependencies": {
+    "@directus/extensions-sdk": "18.1.1",
+    "@directus/types": "^18.1.0",
+    "typescript": "^6.0.3",
+    "vue": "^3.5.45"
+  },
+  "directus:extension": {
+    "type": "panel",
+    "path": "dist/index.js",
+    "source": "src/index.ts",
+    "host": "^10.10.0"
+  },
+  "icon": "extension",
+  "publishConfig": {
+    "access": "public"
+  }
 }

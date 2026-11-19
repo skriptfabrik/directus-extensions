@@ -1,23 +1,21 @@
 [settings]
-idiomatic_version_file_enable_tools = [ "node" ]
+idiomatic_version_file_enable_tools = ["node", "pnpm"]
 
 [env]
-_.path = [ "{{config_root}}/node_modules/.bin" ]
+_.file = [".env"]
+_.path = ["{{config_root}}/node_modules/.bin"]
 
-COREPACK_ENABLE_DOWNLOAD_PROMPT = "0"
+PNPM_CONFIG_STORE_DIR = "~/.local/share/pnpm/store"
 
-[hooks]
-postinstall = """
-npx corepack enable
-pnpm config set store-dir ~/.local/share/pnpm/store
-"""
+[tools]
+gh = "2.103.3"
 
 [tasks.install]
-description = "Installs dependencies with pnpm"
+description = "Install dependencies"
+depends = ["pnpm-install"]
+
+[tasks.pnpm-install]
+description = "Install Node.js packages"
 run = "pnpm install"
-sources = [
-  "package.json",
-  "pnpm-lock.yaml",
-  "mise.toml" 
-]
-outputs = [ "node_modules/.pnpm/lock.yaml" ]
+sources = ["package.json", "pnpm-lock.yaml", "mise.toml"]
+outputs = ["node_modules/.pnpm/lock.yaml"]

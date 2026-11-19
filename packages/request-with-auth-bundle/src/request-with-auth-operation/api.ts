@@ -6,174 +6,174 @@ import { encodeUrl } from 'encodeurl';
 import { getAxios } from '../utils/request';
 
 interface Options {
-	url: string;
-	method: string;
-	body: Record<string, any> | string | null;
-	headers?: { header: string; value: string }[] | null;
-	secret?: number | null;
-	retry_on_fail?: boolean;
-	retry_count?: number;
-	retry_delay?: number;
+  url: string;
+  method: string;
+  body: Record<string, any> | string | null;
+  headers?: { header: string; value: string }[] | null;
+  secret?: number | null;
+  retry_on_fail?: boolean;
+  retry_count?: number;
+  retry_delay?: number;
 }
 
 export default defineOperationApi<Options>({
-	id: 'request_with_auth',
-	handler: async (
-		{
-			url,
-			method,
-			body,
-			headers,
-			secret,
-			retry_count,
-			retry_delay,
-			retry_on_fail,
-		},
-		context,
-	) => {
-		const { services, getSchema, logger } = context;
-		const { ItemsService, PayloadService } = services;
-		const payloadService = new PayloadService('app_secrets', {
-			schema: await getSchema(),
-			accountability: null,
-		});
+  id: 'request_with_auth',
+  handler: async (
+    {
+      url,
+      method,
+      body,
+      headers,
+      secret,
+      retry_count,
+      retry_delay,
+      retry_on_fail,
+    },
+    context,
+  ) => {
+    const { services, getSchema, logger } = context;
+    const { ItemsService, PayloadService } = services;
+    const payloadService = new PayloadService('app_secrets', {
+      schema: await getSchema(),
+      accountability: null,
+    });
 
-		const decryptString = async (value?: string) => {
-			// @ts-expect-error transformers do exist on PayloadService
-			return await payloadService.transformers.encrypt({
-				action: 'read',
-				value,
-				accountability: null,
-			});
-		};
+    const decryptString = async (value?: string) => {
+      // @ts-expect-error transformers do exist on PayloadService
+      return await payloadService.transformers.encrypt({
+        action: 'read',
+        value,
+        accountability: null,
+      });
+    };
 
-		const decryptSecret = async (encryptedSecret?: AppSecret) => {
-			if (!encryptedSecret) return null;
-			const decryptedSecret = { ...encryptedSecret };
+    const decryptSecret = async (encryptedSecret?: AppSecret) => {
+      if (!encryptedSecret) return null;
+      const decryptedSecret = { ...encryptedSecret };
 
-			switch (decryptedSecret.type) {
-				case 'basic': {
-					if (decryptedSecret.fields?.password) {
-						decryptedSecret.fields.password = await decryptString(
-							decryptedSecret.fields.password,
-						);
-					}
+      switch (decryptedSecret.type) {
+        case 'basic': {
+          if (decryptedSecret.fields?.password) {
+            decryptedSecret.fields.password = await decryptString(
+              decryptedSecret.fields.password,
+            );
+          }
 
-					return decryptedSecret;
-				}
+          return decryptedSecret;
+        }
 
-				case 'bearer': {
-					if (decryptedSecret.fields?.token) {
-						decryptedSecret.fields.token = await decryptString(
-							decryptedSecret.fields.token,
-						);
-					}
+        case 'bearer': {
+          if (decryptedSecret.fields?.token) {
+            decryptedSecret.fields.token = await decryptString(
+              decryptedSecret.fields.token,
+            );
+          }
 
-					return decryptedSecret;
-				}
+          return decryptedSecret;
+        }
 
-				default:
-					return decryptedSecret;
-			}
-		};
+        default:
+          return decryptedSecret;
+      }
+    };
 
-		const itemsService = new ItemsService('app_secrets', {
-			schema: await getSchema(),
-			accountability: null,
-		});
-		let credential;
+    const itemsService = new ItemsService('app_secrets', {
+      schema: await getSchema(),
+      accountability: null,
+    });
+    let credential;
 
-		if (secret) {
-			try {
-				credential = await itemsService.readOne(secret);
-			} catch {
-				logger.error(`Failed to load credential with id ${secret}.`);
+    if (secret) {
+      try {
+        credential = await itemsService.readOne(secret);
+      } catch {
+        logger.error(`Failed to load credential with id ${secret}.`);
 
-				throw new Error(
-					`Failed to load the configured credential (id: ${secret}). Please verify it still exists and that this Flow has permission to read it.`,
-				);
-			}
+        throw new Error(
+          `Failed to load the configured credential (id: ${secret}). Please verify it still exists and that this Flow has permission to read it.`,
+        );
+      }
 
-			if (credential && typeof credential.fields === 'string') {
-				credential.fields = JSON.parse(credential.fields || '{}');
-			}
+      if (credential && typeof credential.fields === 'string') {
+        credential.fields = JSON.parse(credential.fields || '{}');
+      }
 
-			credential = await decryptSecret(credential as AppSecret);
-		}
+      credential = await decryptSecret(credential as AppSecret);
+    }
 
-		const customHeaders =
-			headers?.reduce(
-				(acc, { header, value }) => {
-					acc[header] = value;
-					return acc;
-				},
-				{} as Record<string, string>,
-			) ?? {};
+    const customHeaders =
+      headers?.reduce(
+        (acc, { header, value }) => {
+          acc[header] = value;
+          return acc;
+        },
+        {} as Record<string, string>,
+      ) ?? {};
 
-		if (
-			!customHeaders['Content-Type'] &&
-			(typeof body === 'object' || isValidJSON(body))
-		) {
-			customHeaders['Content-Type'] = 'application/json';
-		}
+    if (
+      !customHeaders['Content-Type'] &&
+      (typeof body === 'object' || isValidJSON(body))
+    ) {
+      customHeaders['Content-Type'] = 'application/json';
+    }
 
-		if (
-			credential?.type === 'basic' &&
-			credential?.fields?.user &&
-			credential?.fields?.password
-		) {
-			// eslint-disable-next-line n/prefer-global/buffer
-			customHeaders.Authorization = `Basic ${Buffer.from(`${credential.fields.user}:${credential.fields.password}`).toString('base64')}`;
-		} else if (credential?.type === 'bearer' && credential?.fields?.token) {
-			customHeaders.Authorization = `Bearer ${credential.fields.token}`;
-		}
+    if (
+      credential?.type === 'basic' &&
+      credential?.fields?.user &&
+      credential?.fields?.password
+    ) {
+      // eslint-disable-next-line n/prefer-global/buffer
+      customHeaders.Authorization = `Basic ${Buffer.from(`${credential.fields.user}:${credential.fields.password}`).toString('base64')}`;
+    } else if (credential?.type === 'bearer' && credential?.fields?.token) {
+      customHeaders.Authorization = `Bearer ${credential.fields.token}`;
+    }
 
-		const axios = await getAxios();
+    const axios = await getAxios();
 
-		const maxAttempts = (retry_on_fail && retry_count ? retry_count : 0) + 1;
-		const delayMs = retry_delay ?? 1000;
+    const maxAttempts = (retry_on_fail && retry_count ? retry_count : 0) + 1;
+    const delayMs = retry_delay ?? 1000;
 
-		for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-			try {
-				const result = await axios({
-					url: encodeUrl(url),
-					method,
-					data: body,
-					headers: customHeaders,
-				});
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+      try {
+        const result = await axios({
+          url: encodeUrl(url),
+          method,
+          data: body,
+          headers: customHeaders,
+        });
 
-				return {
-					status: result.status,
-					statusText: result.statusText,
-					headers: result.headers,
-					data: result.data,
-				};
-			} catch (error) {
-				if (
-					attempt < maxAttempts &&
-					isAxiosError(error) &&
-					error.response &&
-					error.response.status >= 500
-				) {
-					logger.warn(
-						`Request failed with status ${error.response.status}, retrying...`,
-					);
+        return {
+          status: result.status,
+          statusText: result.statusText,
+          headers: result.headers,
+          data: result.data,
+        };
+      } catch (error) {
+        if (
+          attempt < maxAttempts &&
+          isAxiosError(error) &&
+          error.response &&
+          error.response.status >= 500
+        ) {
+          logger.warn(
+            `Request failed with status ${error.response.status}, retrying...`,
+          );
 
-					await new Promise((resolve) => setTimeout(resolve, delayMs));
-					continue;
-				}
+          await new Promise((resolve) => setTimeout(resolve, delayMs));
+          continue;
+        }
 
-				throw isAxiosError(error) && error.response
-					? JSON.stringify({
-							status: error.response.status,
-							statusText: error.response.statusText,
-							headers: error.response.headers,
-							data: error.response.data,
-						})
-					: error;
-			}
-		}
+        throw isAxiosError(error) && error.response
+          ? JSON.stringify({
+              status: error.response.status,
+              statusText: error.response.statusText,
+              headers: error.response.headers,
+              data: error.response.data,
+            })
+          : error;
+      }
+    }
 
-		return null;
-	},
+    return null;
+  },
 });
